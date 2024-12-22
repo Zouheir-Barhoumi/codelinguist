@@ -101,10 +101,12 @@
     </section>
 
     <!-- Our Mission Section -->
-    <section class="py-10 bg-black text-white">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-2xl font-bold">Our Mission</h2>
-        <p>{{ missionText }}</p>
+    <section class="bg-bg-custom-black text-white">
+      <div
+        class="max-w-4xl mx-auto text-left bg-black-grade h-full py-10 px-20 my-0"
+      >
+        <h2 class="text-2xl font-bold text-center pb-10">Our Mission</h2>
+        <p class="lh-loose text-justify">{{ missionText }}</p>
       </div>
     </section>
 
@@ -169,3 +171,17 @@ export default {
   },
 };
 </script>
+
+<style>
+.bg-black-grade {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(24, 24, 24, 1) 20%,
+    rgba(7, 7, 7, 1) 34%,
+    rgba(13, 13, 13, 1) 66%,
+    rgba(33, 33, 33, 1) 80%,
+    rgba(86, 86, 86, 1) 100%
+  );
+}
+</style>
