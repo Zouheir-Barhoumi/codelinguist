@@ -1,3 +1,3 @@
 <template>
-  <div>This is a course template page</div>
+  <div>This is the learning page</div>
 </template>
