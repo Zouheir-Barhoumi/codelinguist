@@ -159,7 +159,7 @@ export default {
           description: "Short summary...",
         },
       ],
-      missionText: `At CodeLinguist, we're not just writing code—we believe that mastering programming isn't about focusing on abstract algorithms or overly complex projects. Instead, we focus on the small, powerful pieces of functionality that are the building blocks of every application. By breaking down low-level functions, we aim to provide practical, reusable skills that can be applied across countless programming scenarios. Our mission is to make coding accessible by transforming complex concepts into clear insights—enabling you to learn and build real programming skills, one piece at a time.`,
+      missionText: `At TheCodeLinguist, we're don’t just focus on code writing—we believe that programming mastery isn't all about abstract algorithms or overly complex projects. Instead, we focus on the small, powerful pieces of functionality that are the building blocks of  every application. By breaking down concepts to low-level functions we aim to provide practical, reusable skills that can be applied across countless programming scenarios. Our mission is to make coding accessible by transforming complex ideas into clear insights—enabling you to learn and build real programming skills, one line at a time.`,
     };
   },
   methods: {
@@ -169,7 +169,3 @@ export default {
   },
 };
 </script>
-
-<style>
-/* @import "https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.css"; */
-</style>
