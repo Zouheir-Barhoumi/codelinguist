@@ -13,8 +13,17 @@ export default defineConfig({
   },
   theme: {
     colors: {
-      primary: "#007bff",
-      secondary: "#6c757d",
+      primary: "rgb(246, 230, 213)", // #f6e6d5
+      secondary: "rgb(84, 44, 0)", // #542c00
+      tertiary: "rgb(255, 207, 153)", // #ffcf99
+      success: "rgb(156, 255, 153)", // #9cff99
+      danger: "rgb(255, 153, 187)", // #ff99bb
+      warning: "rgb(153, 124, 92)", // #997c5c
+      info: "rgb(218, 241, 255)", // #daf1ff
+      light: "rgb(244, 234, 223)", // #f4eadf
+      lighter: "rgb(249, 244, 239)", // #f9f4ef
+      dark: "rgb(43, 23, 0)", // #2b1700
+      darker: "rgb(0, 0, 0)", // #0000
       "bg-custom-black": "#0D0D0D",
     },
     fontFamily: {

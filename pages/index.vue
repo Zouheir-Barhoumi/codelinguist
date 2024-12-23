@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-beige">
+  <div class="bg-primary">
     <!-- Navbar -->
     <nav class="flex justify-between items-center p-4 bg-beige">
       <div class="text-lg font-bold">CodeLinguist</div>
@@ -103,7 +103,7 @@
     <!-- Our Mission Section -->
     <section class="bg-bg-custom-black text-white">
       <div
-        class="max-w-4xl mx-auto text-left bg-black-grade h-full py-10 px-20 my-0"
+        class="max-w-4xl mx-auto text-left bg_black_grade h-full py-10 px-20 my-0"
       >
         <h2 class="text-2xl font-bold text-center pb-10">Our Mission</h2>
         <p class="lh-loose text-justify">{{ missionText }}</p>
@@ -173,7 +173,7 @@ export default {
 </script>
 
 <style>
-.bg-black-grade {
+.bg_black_grade {
   background: linear-gradient(
     135deg,
     rgba(0, 0, 0, 1) 0%,
