@@ -27,8 +27,9 @@
 
     <!-- Hero Section -->
     <section class="relative text-center py-20">
+      <!-- src="/assets/images/angular-project.jpg" -->
       <img
-        src="/modern_bg.jpeg"
+        src="/assets/images/modern_bg.jpeg"
         alt="hero"
         class="absolute inset-0 w-full h-full object-cover opacity-30"
       />
@@ -151,13 +152,13 @@ export default {
         {
           id: 1,
           title: "Angular Project",
-          image: "/angular-project.png",
+          image: "/_nuxt/assets/images/angular-project.jpg",
           description: "Short summary...",
         },
         {
           id: 2,
           title: "Next Gen Project",
-          image: "/next-gen-project.png",
+          image: "/_nuxt/assets/images/next-gen-project.jpg",
           description: "Short summary...",
         },
       ],
