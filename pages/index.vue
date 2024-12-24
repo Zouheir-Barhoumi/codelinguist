@@ -39,7 +39,7 @@
         </h1>
         <nuxt-link
           to="/blog"
-          class="mt-4 inline-block bg-black text-white px-4 py-2"
+          class="mt-4 inline-block bg-secondary text-white px-4 py-2"
           >Read</nuxt-link
         >
       </div>
@@ -56,7 +56,9 @@
         >
           <h3 class="font-bold">{{ post.title }}</h3>
           <p>{{ post.excerpt }}</p>
-          <nuxt-link :to="`/blog/${post.slug}`" class="text-orange-500"
+          <nuxt-link
+            :to="`/blog/${post.slug}`"
+            class="text-secondary font-bold underline"
             >Read More</nuxt-link
           >
         </div>
@@ -85,17 +87,17 @@
       <div class="flex justify-center space-x-4 mt-4">
         <nuxt-link
           to="/learning/quizzes"
-          class="w-40 p-4 bg-orange-500 text-white text-center"
+          class="w-40 p-4 bg-tertiary text-darker text-center"
           >Quizzes</nuxt-link
         >
         <nuxt-link
           to="/learning/interactive"
-          class="w-40 p-4 bg-orange-500 text-white text-center"
+          class="w-40 p-4 bg-tertiary text-darker text-center"
           >Interactive</nuxt-link
         >
         <nuxt-link
           to="/learning/lessons"
-          class="w-40 p-4 bg-orange-500 text-white text-center"
+          class="w-40 p-4 bg-tertiary text-darker text-center"
           >Lessons</nuxt-link
         >
       </div>
