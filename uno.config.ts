@@ -11,6 +11,7 @@ export default defineConfig({
     "bg-custom-black":
       "bg-[linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(24,24,24,1) 20%, rgba(7,7,7,1) 34%, rgba(13,13,13,1) 66%, rgba(33,33,33,1) 80%, rgba(86,86,86,1) 100%)]",
   },
+  rules: [["bg-fixed", { "background-attachment": "fixed" }]],
   theme: {
     colors: {
       primary: "rgb(246, 230, 213)", // #f6e6d5
