@@ -2,7 +2,7 @@
   <div class="bg-primary">
     <!-- Navbar -->
     <nav class="flex justify-between items-center p-4 bg-beige">
-      <div class="text-lg font-bold">CodeLinguist</div>
+      <div class="text-lg font-bold text-secondary">CodeLinguist</div>
       <button @click="toggleMenu" class="sm:hidden">
         <i class="fas fa-bars"></i>
       </button>
@@ -164,7 +164,7 @@ export default {
           description: "Short summary...",
         },
       ],
-      missionText: `At TheCodeLinguist, our method isn't restricted to code writing—we believe that programming mastery isn't all about abstract algorithms or overly complex projects either. Instead, we focus on the small, powerful pieces of functionality that are the building blocks of every application. By breaking down concepts to low-level functions we aim to provide practical, reusable skills that can be applied across countless programming scenarios. Our mission is to make coding accessible by transforming complex ideas into clear insights—enabling you to learn and build real programming skills, one line at a time.`,
+      missionText: `At the CodeLinguist, our methods aren't restricted to code writing—we believe that programming mastery isn't all about abstract algorithms or overly complex projects either. Instead we focus on the small, yet, powerful pieces of functionality that are the building blocks of every application. By breaking down concepts to low-level functions we aim to provide practical, reusable skills that can be applied across countless programming scenarios. Our mission is to make coding a manageable, masteful exercise by transforming complex ideas into clear insights—enabling you to learn and build real programming skills with our unique aproach.`,
     };
   },
   methods: {
