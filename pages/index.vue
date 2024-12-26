@@ -3,7 +3,7 @@
     <!-- Navbar -->
     <nav class="flex justify-between items-center p-4 bg-beige">
       <div>
-        <nuxt-link to="/" class="text-2xl font-extrabold text-darker"
+        <nuxt-link to="/" class="text-2xl font-extrabold text-secondary"
           >CodeLinguist</nuxt-link
         >
       </div>
@@ -33,7 +33,15 @@
     <section
       class="relative text-center py-20 sm:h-[75vh] flex items-center justify-center"
     >
+      <div
+        class="bg-info absolute inset-0 pointer-events-none h-[10vh] z-11 opacity-20"
+      ></div>
       <div class="bg-tertiary absolute inset-0 pointer-events-none"></div>
+      <img
+        src="/assets/images/curtains.jpg"
+        alt="stylistic colors hero image"
+        class="absolute inset-0 w-full h-full object-cover opacity-15"
+      />
       <img
         src="/assets/images/modern_bg.jpeg"
         alt="hero"
@@ -45,7 +53,7 @@
         </h1>
         <nuxt-link
           to="/blog"
-          class="mt-4 inline-block bg-darker text-light px-4 py-2"
+          class="mt-4 inline-block bg-secondary text-white px-4 py-2"
           >Read</nuxt-link
         >
       </div>
