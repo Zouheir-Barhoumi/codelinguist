@@ -7,14 +7,14 @@
       <div>
         <nuxt-link
           to="/"
-          class="text-2xl md:font-black font-extrabold text-secondary mr-4"
+          class="text-2xl md:font-black font-extrabold text-dark mr-4"
           >CodeLinguist</nuxt-link
         >
       </div>
       <div
         class="desktop-menu hidden sm:block w-full h-full bg-opacity-50 z-50"
       >
-        <div class="text-secondary">
+        <div class="text-dark">
           <ul
             class="space-x-8 flex flex-row justify-end uppercase tracking-wider"
           >
@@ -72,11 +72,14 @@
         </h1>
         <nuxt-link
           to="/blog"
-          class="mt-4 inline-block bg-secondary text-white px-4 py-2"
+          class="text-xl mt-4 inline-block bg-dark text-white px-8 py-2 rounded-sm"
           >Read</nuxt-link
         >
       </div>
     </section>
+
+    <!-- Divider -->
+    <div class="h-0.5 bg-darkest h1"></div>
 
     <!-- Blog Section -->
     <section class="py-10">
@@ -120,17 +123,17 @@
       <div class="flex justify-center space-x-4 mt-4">
         <nuxt-link
           to="/learning/quizzes"
-          class="w-40 p-4 bg-tertiary text-darker text-center"
+          class="w-40 p-4 bg-tertiary text-darkest text-center"
           >Quizzes</nuxt-link
         >
         <nuxt-link
           to="/learning/interactive"
-          class="w-40 p-4 bg-tertiary text-darker text-center"
+          class="w-40 p-4 bg-tertiary text-darkest text-center"
           >Interactive</nuxt-link
         >
         <nuxt-link
           to="/learning/lessons"
-          class="w-40 p-4 bg-tertiary text-darker text-center"
+          class="w-40 p-4 bg-tertiary text-darkest text-center"
           >Lessons</nuxt-link
         >
       </div>
@@ -147,7 +150,7 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="py-4 bg-tertiary text-darker text-center">
+    <footer class="py-4 bg-tertiary text-darkest text-center">
       <div class="flex justify-center space-x-4 mt-2">
         <a href="#" class="text-xl"><i class="fab fa-facebook"></i></a>
         <a href="#" class="text-xl"><i class="fab fa-linkedin"></i></a>

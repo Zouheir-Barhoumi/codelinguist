@@ -24,7 +24,8 @@ export default defineConfig({
       light: "rgb(244, 234, 223)", // #f4eadf
       lighter: "rgb(249, 244, 239)", // #f9f4ef
       dark: "rgb(43, 23, 0)", // #2b1700
-      darker: "rgb(0, 0, 0)", // #0000
+      darker: "rgb(32, 17, 0)", // #2b1700
+      darkest: "rgb(0, 0, 0)", // #0000
       "bg-custom-black": "#0D0D0D",
     },
     fontFamily: {
