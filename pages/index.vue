@@ -1,18 +1,37 @@
 <template>
   <div class="bg-primary">
     <!-- Navbar -->
-    <nav class="flex justify-between items-center p-4 bg-beige">
+    <nav
+      class="flex justify-between items-center p-4 sm:px-8 md:px-16 2xl:px-32"
+    >
       <div>
-        <nuxt-link to="/" class="text-2xl font-extrabold text-secondary"
+        <nuxt-link
+          to="/"
+          class="text-2xl md:font-black font-extrabold text-secondary mr-4"
           >CodeLinguist</nuxt-link
         >
+      </div>
+      <div
+        class="desktop-menu hidden sm:block w-full h-full bg-opacity-50 z-50"
+      >
+        <div class="text-secondary">
+          <ul
+            class="space-x-8 flex flex-row justify-end uppercase tracking-wider"
+          >
+            <li><nuxt-link to="/">Home</nuxt-link></li>
+            <li><nuxt-link to="/blog">Blog</nuxt-link></li>
+            <li><nuxt-link to="/projects">Projects</nuxt-link></li>
+            <li><nuxt-link to="/learning">Learning</nuxt-link></li>
+            <li><nuxt-link to="/about">About</nuxt-link></li>
+          </ul>
+        </div>
       </div>
       <button @click="toggleMenu" class="sm:hidden">
         <img src="/assets/images/jam_directions_menu.png" alt="mobile menu" />
       </button>
       <div
         :class="{ block: isMenuOpen, hidden: !isMenuOpen }"
-        class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50"
+        class="mobile-menu absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50"
       >
         <div class="bg-black text-white p-4">
           <button @click="toggleMenu" class="absolute top-4 right-4 text-xl">
@@ -47,7 +66,7 @@
         alt="hero"
         class="absolute inset-0 w-full h-full object-cover filter brightness-75 hue-rotate-15 saturate-150 opacity-50"
       />
-      <div class="relative z-10">
+      <div class="relative z-10 md:space-y-12">
         <h1 class="lg:text-3xl text-2xl font-bold text-lighter">
           Coding Insights and Learning Resources
         </h1>
@@ -177,7 +196,7 @@ export default {
         description: "Short summary...",
       },
     ]);
-    const missionText = `At the CodeLinguist, our methods aren't restricted to code writing—We believe that programming mastery isn't all about abstract algorithms or overly complex projects either. Instead we focus on the small, yet, powerful pieces of functionality that are the building blocks of every application. By breaking down concepts to low-level functions we aim to provide practical, reusable skills that can be applied across countless programming scenarios. Our mission is to make coding a manageable, masteful exercise by transforming complex ideas into clear insights—enabling you to learn and build real programming skills with our unique aproach.`;
+    const missionText = `At the CodeLinguist, our strategy isn't strictly about code writing—We don't believe in programming mastery through abstract algorithms or overly complex projects either. Instead we focus on the small, yet, powerful pieces of functionality that are the building blocks of every application. By breaking down concepts to low-level functions we aim to provide practical, reusable skills that can be applied across countless programming scenarios. Our mission is to make the coding process a manageable, masteful exercise by transforming complex ideas into clear insights—enabling you to learn and build real programming skills and a unique aproach.`;
 
     const toggleMenu = () => {
       isMenuOpen.value = !isMenuOpen.value;
