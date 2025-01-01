@@ -33,16 +33,26 @@
         :class="{ block: isMenuOpen, hidden: !isMenuOpen }"
         class="mobile-menu absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50"
       >
-        <div class="bg-black text-white p-4">
-          <button @click="toggleMenu" class="absolute top-4 right-4 text-xl">
-            &times;
+        <div class="bg-primary text-light p-4 h-full">
+          <button @click="toggleMenu" class="absolute top-5 right-5 w-8 h-8">
+            <img src="/assets/images/oi_x.svg" alt="close menu" />
           </button>
-          <ul class="space-y-4">
-            <li><nuxt-link to="/">Home</nuxt-link></li>
-            <li><nuxt-link to="/blog">Blog</nuxt-link></li>
-            <li><nuxt-link to="/projects">Projects</nuxt-link></li>
-            <li><nuxt-link to="/learning">Learning</nuxt-link></li>
-            <li><nuxt-link to="/about">About</nuxt-link></li>
+          <ul class="space-y-4 text-center h-full flex flex-col justify-center">
+            <nuxt-link class="w-1/1.7 mx-auto" to="/">
+              <li class="bg-darkest p-4 font-bold">HOME</li>
+            </nuxt-link>
+            <nuxt-link class="w-1/1.7 mx-auto" to="/blog">
+              <li class="bg-darkest p-4 font-bold">BLOG</li>
+            </nuxt-link>
+            <nuxt-link class="w-1/1.7 mx-auto" to="/projects">
+              <li class="bg-darkest p-4 font-bold">PROJECTS</li>
+            </nuxt-link>
+            <nuxt-link class="w-1/1.7 mx-auto" to="/learning">
+              <li class="bg-darkest p-4 font-bold">LEARNING</li>
+            </nuxt-link>
+            <nuxt-link class="w-1/1.7 mx-auto" to="/about">
+              <li class="bg-darkest p-4 font-bold">ABOUT</li>
+            </nuxt-link>
           </ul>
         </div>
       </div>
