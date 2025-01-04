@@ -18,11 +18,45 @@
           <ul
             class="space-x-8 flex flex-row justify-end uppercase tracking-wider"
           >
-            <li><nuxt-link to="/">Home</nuxt-link></li>
-            <li><nuxt-link to="/blog">Blog</nuxt-link></li>
-            <li><nuxt-link to="/projects">Projects</nuxt-link></li>
-            <li><nuxt-link to="/learning">Learning</nuxt-link></li>
-            <li><nuxt-link to="/about">About</nuxt-link></li>
+            <li>
+              <nuxt-link
+                to="/"
+                class="p-4 font-bold bg-cover"
+                :class="{ active_page: isReactive('/') }"
+                :style="{
+                  backgroundImage: `url(/_nuxt/assets/images/box.svg)`,
+                }"
+                >Home</nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link
+                to="/blog"
+                :class="{ active_page: isReactive('/blog') }"
+                >Blog</nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link
+                to="/projects"
+                :class="{ active_page: isReactive('/projects') }"
+                >Projects</nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link
+                to="/learning"
+                :class="{ active_page: isReactive('/learning') }"
+                >Learning</nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link
+                to="/about"
+                :class="{ active_page: isReactive('/about') }"
+                >About</nuxt-link
+              >
+            </li>
           </ul>
         </div>
       </div>
@@ -92,37 +126,53 @@
     <div class="h-0.5 bg-darkest h1"></div>
 
     <!-- Blog Section -->
-    <section class="py-10 bg-[#f5e9dc]">
-      <h2 class="text-2xl font-bold text-center mb-8">Blog posts</h2>
-      <div class="flex flex-wrap justify-center gap-6">
-        <div
-          v-for="post in blogPosts"
-          :key="post.id"
-          class="w-80 p-4 border border-gray-400 rounded-lg shadow-md bg-white relative overflow-hidden"
+    <section class="py-10 bg-light">
+      <div
+        class="wrapper border border-2 border-dark bg-primary pb-20 flex flex-col items-center"
+      >
+        <h2
+          class="inline-block bg-lighter md:text-xl lg:text-2xl font-bold mt-1 mb-8 border-b-4 border-l-2 border-r-3 border-dark align-center px-8 py-2 tracking-wider capitalize bg-cover bg-center"
+          :style="{
+            backgroundImage: `url('/_nuxt/assets/images/box.svg')`,
+          }"
         >
+          Blog
+        </h2>
+        <div class="flex flex-wrap justify-center gap-6">
           <div
-            class="h-40 bg-cover bg-center mb-4"
-            :style="{ backgroundImage: `url(${post.image})` }"
+            v-for="post in blogPosts"
+            :key="post.id"
+            class="h-80 w-80 border border-darker border-2 bg-lighter backdrop-blur-md shadow-2xl flex flex-col justify-between relative"
           >
+            <!-- Background Image -->
             <div
-              class="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.6)]"
+              class="absolute top-0 left-0 h-full w-full bg-cover bg-center opacity-12"
+              :style="{ backgroundImage: `url(${post.image})` }"
             ></div>
-          </div>
-          <div class="p-4">
-            <h3 class="text-lg font-bold text-black mb-2">{{ post.title }}</h3>
-            <p class="text-sm text-black mb-4">{{ post.excerpt }}</p>
-            <nuxt-link
-              :to="`/blog/${post.slug}`"
-              class="inline-block px-4 py-2 bg-[#f3af5f] text-white font-bold rounded shadow-md hover:bg-[#f08e3e] transition"
+            <!-- Header -->
+            <div class="h-4 bg-white"></div>
+            <!-- Content -->
+            <div class="relative z-10 p-4 flex flex-col h-full justify-center">
+              <h3 class="text-lg font-bold mb-2">{{ post.title }}</h3>
+              <p class="text-sm text-gray-700 mb-4 text-justify">
+                {{ post.excerpt }}
+              </p>
+              <div class="flex justify-end">
+                <nuxt-link
+                  :to="`/blog/${post.id}`"
+                  class="text-darkest bg-tertiary px-4 py-2 rounded-sm cursor-pointer"
+                >
+                  Read more
+                </nuxt-link>
+              </div>
+            </div>
+            <!-- Footer -->
+            <div
+              class="relative z-10 flex justify-between items-center text-sm text-dark p-2 mt-4 bg-light"
             >
-              Read More
-            </nuxt-link>
-          </div>
-          <div
-            class="flex justify-between items-center text-sm text-gray-600 border-t border-gray-300 pt-2 mt-4"
-          >
-            <span>{{ post.topics.join(" | ") }}</span>
-            <span>{{ post.date }}</span>
+              <span>{{ post.topics.join(" | ") }}</span>
+              <span>{{ post.date }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -197,12 +247,16 @@
 <script>
 export default {
   setup() {
+    const route = useRoute();
+    const isActive = (path) =>
+      computed(() => (route.path == path ? "active" : ""));
     let isMenuOpen = ref(false);
     const blogPosts = ref([
       {
         id: 1,
         title: "Blog Post 1",
-        excerpt: "Short description...",
+        excerpt:
+          "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary.",
         image: "/_nuxt/assets/images/blog-post-1.jpg",
         slug: "blog-post-1",
         topics: ["topic1", "topic2"],
@@ -211,7 +265,8 @@ export default {
       {
         id: 2,
         title: "Blog Post 2",
-        excerpt: "Short description...",
+        excerpt:
+          "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right",
         image: "/_nuxt/assets/images/blog-post-1.jpg",
         slug: "blog-post-2",
         topics: ["topic1", "topic2"],
@@ -220,7 +275,8 @@ export default {
       {
         id: 3,
         title: "Sample Blog Post 3",
-        excerpt: "Yet another sample excerpt for demonstration.",
+        excerpt:
+          "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am",
         image: "/_nuxt/assets/images/blog-post-1.jpg",
         slug: "blog-post-3",
         topics: ["topic5", "topic6"],
