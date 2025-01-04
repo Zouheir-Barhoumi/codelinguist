@@ -92,21 +92,38 @@
     <div class="h-0.5 bg-darkest h1"></div>
 
     <!-- Blog Section -->
-    <section class="py-10">
-      <h2 class="text-2xl font-bold text-center">Blog</h2>
-      <div class="flex flex-wrap justify-center mt-4">
+    <section class="py-10 bg-[#f5e9dc]">
+      <h2 class="text-2xl font-bold text-center mb-8">Blog posts</h2>
+      <div class="flex flex-wrap justify-center gap-6">
         <div
           v-for="post in blogPosts"
           :key="post.id"
-          class="w-80 p-4 border m-2"
+          class="w-80 p-4 border border-gray-400 rounded-lg shadow-md bg-white relative overflow-hidden"
         >
-          <h3 class="font-bold">{{ post.title }}</h3>
-          <p>{{ post.excerpt }}</p>
-          <nuxt-link
-            :to="`/blog/${post.slug}`"
-            class="text-secondary font-bold underline"
-            >Read More</nuxt-link
+          <div
+            class="h-40 bg-cover bg-center mb-4"
+            :style="{ backgroundImage: `url(${post.image})` }"
           >
+            <div
+              class="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.6)]"
+            ></div>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-bold text-black mb-2">{{ post.title }}</h3>
+            <p class="text-sm text-black mb-4">{{ post.excerpt }}</p>
+            <nuxt-link
+              :to="`/blog/${post.slug}`"
+              class="inline-block px-4 py-2 bg-[#f3af5f] text-white font-bold rounded shadow-md hover:bg-[#f08e3e] transition"
+            >
+              Read More
+            </nuxt-link>
+          </div>
+          <div
+            class="flex justify-between items-center text-sm text-gray-600 border-t border-gray-300 pt-2 mt-4"
+          >
+            <span>{{ post.topics.join(" | ") }}</span>
+            <span>{{ post.date }}</span>
+          </div>
         </div>
       </div>
     </section>
@@ -186,13 +203,28 @@ export default {
         id: 1,
         title: "Blog Post 1",
         excerpt: "Short description...",
+        image: "/_nuxt/assets/images/blog-post-1.jpg",
         slug: "blog-post-1",
+        topics: ["topic1", "topic2"],
+        date: "2025-01-01",
       },
       {
         id: 2,
         title: "Blog Post 2",
         excerpt: "Short description...",
+        image: "/_nuxt/assets/images/blog-post-1.jpg",
         slug: "blog-post-2",
+        topics: ["topic1", "topic2"],
+        date: "2025-01-01",
+      },
+      {
+        id: 3,
+        title: "Sample Blog Post 3",
+        excerpt: "Yet another sample excerpt for demonstration.",
+        image: "/_nuxt/assets/images/blog-post-1.jpg",
+        slug: "blog-post-3",
+        topics: ["topic5", "topic6"],
+        date: "22/10/2024",
       },
     ]);
     const projects = ref([
