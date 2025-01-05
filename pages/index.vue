@@ -242,72 +242,60 @@
   </div>
 </template>
 
-<script>
-export default {
-  setup() {
-    const route = useRoute();
-    const isActive = (linkPath) => route.path == linkPath;
-    let isMenuOpen = ref(false);
-    const blogPosts = ref([
-      {
-        id: 1,
-        title: "Blog Post 1",
-        excerpt:
-          "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary.",
-        image: "/_nuxt/assets/images/blog-post-1.jpg",
-        slug: "blog-post-1",
-        topics: ["topic1", "topic2"],
-        date: "2025-01-01",
-      },
-      {
-        id: 2,
-        title: "Blog Post 2",
-        excerpt:
-          "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right",
-        image: "/_nuxt/assets/images/blog-post-1.jpg",
-        slug: "blog-post-2",
-        topics: ["topic1", "topic2"],
-        date: "2025-01-01",
-      },
-      {
-        id: 3,
-        title: "Sample Blog Post 3",
-        excerpt:
-          "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am",
-        image: "/_nuxt/assets/images/blog-post-1.jpg",
-        slug: "blog-post-3",
-        topics: ["topic5", "topic6"],
-        date: "22/10/2024",
-      },
-    ]);
-    const projects = ref([
-      {
-        id: 1,
-        title: "Angular Project",
-        image: "/_nuxt/assets/images/angular-project.jpg",
-        description: "Short summary...",
-      },
-      {
-        id: 2,
-        title: "Next Gen Project",
-        image: "/_nuxt/assets/images/next-gen-project.jpg",
-        description: "Short summary...",
-      },
-    ]);
-    const missionText = `At the CodeLinguist, our strategy isn't strictly about code writing—We don't believe in programming mastery through abstract algorithms or overly complex projects either. Instead we focus on the small, yet, powerful pieces of functionality that are the building blocks of every application. By breaking down concepts to low-level functions we aim to provide practical, reusable skills that can be applied across countless programming scenarios. Our mission is to make the coding process a manageable, masteful exercise by transforming complex ideas into clear insights—enabling you to learn and build real programming skills and a unique aproach.`;
-
-    const toggleMenu = () => {
-      isMenuOpen.value = !isMenuOpen.value;
-    };
-    return {
-      isMenuOpen,
-      isActive,
-      blogPosts,
-      projects,
-      missionText,
-      toggleMenu,
-    };
+<script setup>
+const route = useRoute();
+const isActive = (linkPath) => route.path == linkPath;
+let isMenuOpen = ref(false);
+const blogPosts = ref([
+  {
+    id: 1,
+    title: "Blog Post 1",
+    excerpt:
+      "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary.",
+    image: "/_nuxt/assets/images/blog-post-1.jpg",
+    slug: "blog-post-1",
+    topics: ["topic1", "topic2"],
+    date: "2025-01-01",
   },
+  {
+    id: 2,
+    title: "Blog Post 2",
+    excerpt:
+      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right",
+    image: "/_nuxt/assets/images/blog-post-1.jpg",
+    slug: "blog-post-2",
+    topics: ["topic1", "topic2"],
+    date: "2025-01-01",
+  },
+  {
+    id: 3,
+    title: "Sample Blog Post 3",
+    excerpt:
+      "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am",
+    image: "/_nuxt/assets/images/blog-post-1.jpg",
+    slug: "blog-post-3",
+    topics: ["topic5", "topic6"],
+    date: "22/10/2024",
+  },
+]);
+const projects = ref([
+  {
+    id: 1,
+    title: "Angular Project",
+    image: "/_nuxt/assets/images/angular-project.jpg",
+    description: "Short summary...",
+  },
+  {
+    id: 2,
+    title: "Next Gen Project",
+    image: "/_nuxt/assets/images/next-gen-project.jpg",
+    description: "Short summary...",
+  },
+]);
+const missionText = `At the CodeLinguist, our strategy isn't strictly about code writing—We don't believe in programming mastery through abstract algorithms or overly complex projects either. Instead we focus on the small, yet, powerful pieces of functionality that are the building blocks of every application. By breaking down concepts to low-level functions we aim to provide practical, reusable skills that can be applied across countless programming scenarios. Our mission is to make the coding process a manageable, masteful exercise by transforming complex ideas into clear insights—enabling you to learn and build real programming skills and a unique aproach.`;
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
 };
 </script>
 
