@@ -21,39 +21,40 @@
             <li>
               <nuxt-link
                 to="/"
-                class="p-4 font-bold bg-cover"
-                :class="{ active_page: isReactive('/') }"
-                :style="{
-                  backgroundImage: `url(/_nuxt/assets/images/box.svg)`,
-                }"
+                class="p-4 bg-cover"
+                :class="{ active_page: isActive('/') }"
                 >Home</nuxt-link
               >
             </li>
             <li>
               <nuxt-link
                 to="/blog"
-                :class="{ active_page: isReactive('/blog') }"
+                class="p-4 bg-cover"
+                :class="{ active_page: isActive('/blog') }"
                 >Blog</nuxt-link
               >
             </li>
             <li>
               <nuxt-link
                 to="/projects"
-                :class="{ active_page: isReactive('/projects') }"
+                class="p-4 bg-cover"
+                :class="{ active_page: isActive('/projects') }"
                 >Projects</nuxt-link
               >
             </li>
             <li>
               <nuxt-link
                 to="/learning"
-                :class="{ active_page: isReactive('/learning') }"
+                class="p-4 bg-cover"
+                :class="{ active_page: isActive('/learning') }"
                 >Learning</nuxt-link
               >
             </li>
             <li>
               <nuxt-link
                 to="/about"
-                :class="{ active_page: isReactive('/about') }"
+                class="p-4 bg-cover"
+                :class="{ active_page: isActive('/about') }"
                 >About</nuxt-link
               >
             </li>
@@ -131,10 +132,7 @@
         class="wrapper border border-2 border-dark bg-primary pb-20 flex flex-col items-center"
       >
         <h2
-          class="inline-block bg-lighter md:text-xl lg:text-2xl font-bold mt-1 mb-8 border-b-4 border-l-2 border-r-3 border-dark align-center px-8 py-2 tracking-wider capitalize bg-cover bg-center"
-          :style="{
-            backgroundImage: `url('/_nuxt/assets/images/box.svg')`,
-          }"
+          class="inline-block bg-lighter md:text-xl lg:text-2xl font-bold mt-1 mb-8 border-b-4 border-l-2 border-r-3 border-dark align-center px-8 py-2 tracking-wider capitalize"
         >
           Blog
         </h2>
@@ -248,8 +246,7 @@
 export default {
   setup() {
     const route = useRoute();
-    const isActive = (path) =>
-      computed(() => (route.path == path ? "active" : ""));
+    const isActive = (linkPath) => route.path == linkPath;
     let isMenuOpen = ref(false);
     const blogPosts = ref([
       {
@@ -304,6 +301,7 @@ export default {
     };
     return {
       isMenuOpen,
+      isActive,
       blogPosts,
       projects,
       missionText,
@@ -314,6 +312,10 @@ export default {
 </script>
 
 <style>
+.active_page {
+  font-weight: bold;
+  background-image: url(/_nuxt/assets/images/box.svg);
+}
 .bg_black_grade {
   background: linear-gradient(
     135deg,
