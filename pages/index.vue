@@ -302,7 +302,7 @@ const toggleMenu = () => {
 };
 
 const getBorderStyle = (post) => {
-  const randomIndex = Math.floor(Math.random() * 5) + 1;
+  const randomIndex = Math.floor(Math.random() * 7) + 1;
   return {
     borderImage: `url('/_nuxt/assets/images/borders_square_${randomIndex}.png') 10 fill`,
     borderWidth: "1px",
