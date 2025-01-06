@@ -127,21 +127,21 @@
     <div class="h-0.5 bg-darkest h1"></div>
 
     <!-- Blog Section -->
-    <section class="py-10 bg-light">
+    <section class="py-10 bg-light relative">
       <div
         class="wrapper border border-2 border-dark bg-primary pb-20 flex flex-col items-center"
       >
         <h2
-          class="inline-block bg-lighter md:text-xl lg:text-2xl font-bold mt-1 mb-8 border-b-4 border-l-2 border-r-3 border-dark align-center px-8 py-2 tracking-wider capitalize"
+          class="inline-block bg-light md:text-xl lg:text-2xl font-bold mt-1 mb-8 border-b-4 border-l-2 border-r-3 border-dark align-center px-8 py-2 tracking-wider capitalize"
         >
           Blog
         </h2>
         <div class="flex flex-wrap justify-center gap-6">
           <!-- Blog Cards -->
           <div
-            v-for="post in blogPosts"
+            v-for="post in pageItems"
             :key="post.id"
-            class="mh-60 m:h-80 w-80 border border-solid border-2 bg-lighter backdrop-blur-md shadow-2xl flex flex-col justify-between relative hover:scale-105 transition-transform duration-300 ease-in-out p-2"
+            class="mh-60 h-80 m:h-80 w-80 border border-solid border-2 bg-lighter backdrop-blur-md hover:shadow-2xl flex flex-col justify-between relative hover:scale-105 transition-transform duration-300 ease-in-out p-2"
             :style="getBorderStyle(post.id)"
           >
             <!-- Background Image -->
@@ -176,6 +176,28 @@
             </div>
           </div>
         </div>
+      </div>
+      <!-- Pagination Controls -->
+      <div
+        class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-80 flex justify-between items-center"
+      >
+        <button
+          @click="prevPage"
+          :disabled="currentPage === 1"
+          class="px-4 py-2 bg-darkest text-light disabled:text-warning disabled:bg-transparent disabled:cursor-not-allowed"
+        >
+          Prev
+        </button>
+        <span class="text-gray-700">
+          Page {{ currentPage }} of {{ totalPages }}
+        </span>
+        <button
+          @click="nextPage"
+          :disabled="currentPage === totalPages"
+          class="px-4 py-2 bg-darkest text-light disabled:text-warning disabled:bg-transparent disabled:cursor-not-allowed"
+        >
+          Next
+        </button>
       </div>
     </section>
 
@@ -280,7 +302,32 @@ const blogPosts = ref([
     topics: ["topic5", "topic6"],
     date: "22/10/2024",
   },
+  {
+    id: 3,
+    title: "Sample Blog Post 4",
+    excerpt:
+      "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am",
+    image: "/_nuxt/assets/images/blog-post-1.jpg",
+    slug: "blog-post-4",
+    topics: ["topic5", "topic6"],
+    date: "22/10/2024",
+  },
+  {
+    id: 4,
+    title: "Sample Blog Post 5",
+    excerpt:
+      "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am",
+    image: "/_nuxt/assets/images/blog-post-1.jpg",
+    slug: "blog-post-5",
+    topics: ["topic5", "topic6"],
+    date: "22/10/2024",
+  },
 ]);
+
+// Pagination
+const { currentPage, totalPages, pageItems, nextPage, prevPage } =
+  usePagination(blogPosts.value, 3);
+
 const projects = ref([
   {
     id: 1,
@@ -307,6 +354,7 @@ const getBorderStyle = (post) => {
     borderImage: `url('/_nuxt/assets/images/borders_square_${randomIndex}.png') 10 fill`,
     borderWidth: "1px",
     // borderStyle: "solid",
+    // borderRepeat: "round",
   };
 };
 </script>
