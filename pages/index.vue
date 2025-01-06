@@ -155,7 +155,7 @@
             <!-- Content -->
             <div class="relative z-10 p-4 flex flex-col h-full justify-center">
               <h3 class="text-lg font-bold mb-2">{{ post.title }}</h3>
-              <p class="text-sm text-gray-700 mb-4 text-justify">
+              <p class="text-sm text-grey mb-4 text-justify">
                 {{ post.excerpt }}
               </p>
               <div class="flex justify-end">
@@ -184,17 +184,17 @@
         <button
           @click="prevPage"
           :disabled="currentPage === 1"
-          class="px-4 py-2 bg-darkest text-light disabled:text-warning disabled:bg-transparent disabled:cursor-not-allowed"
+          class="px-4 py-2 text-darkest font-bold disabled:text-warning disabled:font-normal disabled:cursor-not-allowed"
         >
           Prev
         </button>
-        <span class="text-gray-700">
+        <span class="text-grey">
           Page {{ currentPage }} of {{ totalPages }}
         </span>
         <button
           @click="nextPage"
           :disabled="currentPage === totalPages"
-          class="px-4 py-2 bg-darkest text-light disabled:text-warning disabled:bg-transparent disabled:cursor-not-allowed"
+          class="px-4 py-2 text-darkest font-bold disabled:text-warning disabled:font-normal disabled:cursor-not-allowed"
         >
           Next
         </button>
@@ -202,7 +202,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="py-10 bg-gray-100">
+    <section class="py-10 bg-lighter">
       <h2 class="text-2xl font-bold text-center">Projects</h2>
       <div class="flex flex-wrap justify-center mt-4">
         <div v-for="project in projects" :key="project.id" class="w-80 p-4">
