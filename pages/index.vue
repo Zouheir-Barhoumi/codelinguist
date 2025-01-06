@@ -21,7 +21,7 @@
             <li>
               <nuxt-link
                 to="/"
-                class="p-4 bg-cover"
+                class="p-3"
                 :class="{ active_page: isActive('/') }"
                 >Home</nuxt-link
               >
@@ -29,7 +29,7 @@
             <li>
               <nuxt-link
                 to="/blog"
-                class="p-4 bg-cover"
+                class="p-3"
                 :class="{ active_page: isActive('/blog') }"
                 >Blog</nuxt-link
               >
@@ -37,7 +37,7 @@
             <li>
               <nuxt-link
                 to="/projects"
-                class="p-4 bg-cover"
+                class="p-3"
                 :class="{ active_page: isActive('/projects') }"
                 >Projects</nuxt-link
               >
@@ -45,7 +45,7 @@
             <li>
               <nuxt-link
                 to="/learning"
-                class="p-4 bg-cover"
+                class="p-3"
                 :class="{ active_page: isActive('/learning') }"
                 >Learning</nuxt-link
               >
@@ -53,7 +53,7 @@
             <li>
               <nuxt-link
                 to="/about"
-                class="p-4 bg-cover"
+                class="p-3"
                 :class="{ active_page: isActive('/about') }"
                 >About</nuxt-link
               >
@@ -137,15 +137,18 @@
           Blog
         </h2>
         <div class="flex flex-wrap justify-center gap-6">
+          <!-- Blog Cards -->
           <div
             v-for="post in blogPosts"
             :key="post.id"
-            class="h-80 w-80 border border-darker border-2 bg-lighter backdrop-blur-md shadow-2xl flex flex-col justify-between relative"
+            class="mh-60 m:h-80 w-80 border border-solid border-2 bg-lighter backdrop-blur-md shadow-2xl flex flex-col justify-between relative hover:scale-105 transition-transform duration-300 ease-in-out p-2"
+            :style="getBorderStyle(post.id)"
           >
             <!-- Background Image -->
             <div
               class="absolute top-0 left-0 h-full w-full bg-cover bg-center opacity-12"
               :style="{ backgroundImage: `url(${post.image})` }"
+              alt="blog post image"
             ></div>
             <!-- Header -->
             <div class="h-4 bg-white"></div>
@@ -297,12 +300,23 @@ const missionText = `At the CodeLinguist, our strategy isn't strictly about code
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
+
+const getBorderStyle = (post) => {
+  const randomIndex = Math.floor(Math.random() * 5) + 1;
+  return {
+    borderImage: `url('/_nuxt/assets/images/borders_square_${randomIndex}.png') 10 fill`,
+    borderWidth: "1px",
+    // borderStyle: "solid",
+  };
+};
 </script>
 
 <style>
 .active_page {
-  font-weight: bold;
+  /* font-weight: bold; */
   background-image: url(/_nuxt/assets/images/box.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .bg_black_grade {
   background: linear-gradient(
@@ -314,10 +328,5 @@ const toggleMenu = () => {
     rgba(33, 33, 33, 1) 80%,
     rgba(86, 86, 86, 1) 100%
   );
-}
-.parallax-bg {
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
 }
 </style>
