@@ -23,7 +23,7 @@ export default defineConfig({
       info: "rgb(218, 241, 255)", // #daf1ff
       light: "rgb(244, 234, 223)", // #f4eadf
       lighter: "rgb(249, 244, 239)", // #f9f4ef
-      grey: "rgba(13, 13, 13, 0.86)",
+      grey: "rgb(74, 74, 74)",
       dark: "rgb(43, 23, 0)", // #2b1700
       darker: "rgb(32, 17, 0)", // #201100
       darkest: "rgb(13, 13, 13)", // #0D0D0D
