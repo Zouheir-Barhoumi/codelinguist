@@ -32,3 +32,10 @@
   /* --darker: #0000; */
   --darker: rgb(0, 0, 0);
 }
+
+@font-face {
+  font-family: "Caveat";
+  src: url("/assets/fonts/Caveat/Caveat-VariableFont_wght.ttf");
+  font-weight: 400 700;
+  font-style: normal;
+}
