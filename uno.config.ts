@@ -31,7 +31,8 @@ export default defineConfig({
     },
     fontFamily: {
       caveat: "Caveat, cursive",
-      sans: 'Roboto, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+      ibm: "IBM Plex Mono",
+      sans: ' Roboto, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
       mono: '"Roboto Mono", "Liberation Mono", "Courier New", monospace',
     },
     fontSize: {

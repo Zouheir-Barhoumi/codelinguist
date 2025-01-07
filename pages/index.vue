@@ -149,7 +149,7 @@
         <!-- Call-to-Action Button -->
         <nuxt-link
           to="/blog"
-          class="font-sans mt-4 inline-block bg-dark text-white px-8 py-2 rounded-sm text-base sm:text-lg md:text-xl"
+          class="font-ibm mt-4 inline-block bg-dark text-white px-8 py-2 rounded-sm text-base sm:text-lg md:text-xl"
         >
           Read
         </nuxt-link>

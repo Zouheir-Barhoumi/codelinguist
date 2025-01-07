@@ -7,7 +7,7 @@
     <button
       @click="prevPage"
       :disabled="currentPage === 1"
-      class="font-mono px-4 py-2 text-darkest font-bold disabled:text-warning disabled:font-normal disabled:cursor-not-allowed text-base md:text-lg hover:bg-gray-100 transition-colors duration-200"
+      class="font-mono px-4 py-3 text-darkest font-bold disabled:text-warning disabled:font-normal disabled:cursor-not-allowed text-base md:text-lg hover:bg-darkest hover:text-light transition-colors duration-200 disabled:hover:bg-transparent"
     >
       Prev
     </button>
@@ -21,7 +21,7 @@
     <button
       @click="nextPage"
       :disabled="currentPage === totalPages"
-      class="font-mono px-4 py-2 text-darkest font-bold disabled:text-warning disabled:font-normal disabled:cursor-not-allowed text-base md:text-lg hover:bg-gray-100 transition-colors duration-200"
+      class="font-mono px-4 py-3 text-darkest font-bold disabled:text-warning disabled:font-normal disabled:cursor-not-allowed text-base md:text-lg hover:bg-darkest hover:text-light transition-colors duration-200 disabled:hover:bg-transparent"
     >
       Next
     </button>
