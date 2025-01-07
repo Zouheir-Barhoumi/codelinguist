@@ -127,30 +127,23 @@
     <div class="h-0.5 bg-darkest h1"></div>
 
     <!-- Blog Section -->
-    <section class="py-10 bg-light relative">
-      <div
-        class="wrapper border border-2 border-dark bg-primary pb-20 flex flex-col items-center"
-      >
-        <h2
-          class="inline-block bg-light md:text-xl lg:text-2xl font-bold mt-1 mb-8 border-b-4 border-l-2 border-r-3 border-dark align-center px-8 py-2 tracking-wider capitalize"
-        >
-          Blog
-        </h2>
-        <div class="flex flex-wrap justify-center gap-6 max-w-5xl">
+    <ContentSection title="Blog">
+      <template #content>
+        <div v-for="post in pageItems" :key="post.id">
           <!-- Blog Cards -->
-          <div v-for="post in pageItems" :key="post.id">
-            <BlogCard :post="post" />
-          </div>
+          <BlogCard :post="post" />
         </div>
-      </div>
-      <!-- Pagination Controls -->
-      <Pagination
-        :currentPage="currentPage"
-        :totalPages="totalPages"
-        @prevPage="prevPage"
-        @nextPage="nextPage"
-      />
-    </section>
+      </template>
+      <template #pagination>
+        <!-- Pagination Controls -->
+        <Pagination
+          :currentPage="currentPage"
+          :totalPages="totalPages"
+          @prevPage="prevPage"
+          @nextPage="nextPage"
+        />
+      </template>
+    </ContentSection>
 
     <!-- Projects Section -->
     <section class="py-10 bg-lighter">
