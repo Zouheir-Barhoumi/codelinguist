@@ -1,20 +1,27 @@
 <template>
   <!-- Pagination Controls -->
   <div
-    class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-80 flex justify-between items-center"
+    class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-80 flex justify-between items-center gap-4"
   >
+    <!-- Previous Button -->
     <button
       @click="prevPage"
       :disabled="currentPage === 1"
-      class="px-4 py-2 text-darkest font-bold disabled:text-warning disabled:font-normal disabled:cursor-not-allowed"
+      class="font-mono px-4 py-2 text-darkest font-bold disabled:text-warning disabled:font-normal disabled:cursor-not-allowed text-base md:text-lg hover:bg-gray-100 transition-colors duration-200"
     >
       Prev
     </button>
-    <span class="text-grey"> Page {{ currentPage }} of {{ totalPages }} </span>
+
+    <!-- Page Indicator -->
+    <span class="text-grey text-sm md:text-base">
+      Page {{ currentPage }} of {{ totalPages }}
+    </span>
+
+    <!-- Next Button -->
     <button
       @click="nextPage"
       :disabled="currentPage === totalPages"
-      class="px-4 py-2 text-darkest font-bold disabled:text-warning disabled:font-normal disabled:cursor-not-allowed"
+      class="font-mono px-4 py-2 text-darkest font-bold disabled:text-warning disabled:font-normal disabled:cursor-not-allowed text-base md:text-lg hover:bg-gray-100 transition-colors duration-200"
     >
       Next
     </button>

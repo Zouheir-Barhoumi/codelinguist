@@ -4,13 +4,17 @@
     <nav
       class="flex justify-between items-center p-4 sm:px-8 md:px-16 2xl:px-32"
     >
+      <!-- Logo -->
       <div>
         <nuxt-link
           to="/"
-          class="text-2xl md:font-black font-extrabold text-dark mr-4"
-          >CodeLinguist</nuxt-link
+          class="font-caveat text-4xl md:text-5xl font-bold text-dark mr-4"
         >
+          CodeLinguist
+        </nuxt-link>
       </div>
+
+      <!-- Desktop Menu -->
       <div
         class="desktop-menu hidden sm:block w-full h-full bg-opacity-50 z-50"
       >
@@ -21,49 +25,58 @@
             <li>
               <nuxt-link
                 to="/"
-                class="p-3"
+                class="p-3 text-sm md:text-base"
                 :class="{ active_page: isActive('/') }"
-                >Home</nuxt-link
               >
+                Home
+              </nuxt-link>
             </li>
             <li>
               <nuxt-link
                 to="/blog"
-                class="p-3"
+                class="p-3 text-sm md:text-base"
                 :class="{ active_page: isActive('/blog') }"
-                >Blog</nuxt-link
               >
+                Blog
+              </nuxt-link>
             </li>
             <li>
               <nuxt-link
                 to="/projects"
-                class="p-3"
+                class="p-3 text-sm md:text-base"
                 :class="{ active_page: isActive('/projects') }"
-                >Projects</nuxt-link
               >
+                Projects
+              </nuxt-link>
             </li>
             <li>
               <nuxt-link
                 to="/learning"
-                class="p-3"
+                class="p-3 text-sm md:text-base"
                 :class="{ active_page: isActive('/learning') }"
-                >Learning</nuxt-link
               >
+                Learning
+              </nuxt-link>
             </li>
             <li>
               <nuxt-link
                 to="/about"
-                class="p-3"
+                class="p-3 text-sm md:text-base"
                 :class="{ active_page: isActive('/about') }"
-                >About</nuxt-link
               >
+                About
+              </nuxt-link>
             </li>
           </ul>
         </div>
       </div>
+
+      <!-- Mobile Menu Button -->
       <button @click="toggleMenu" class="sm:hidden">
         <img src="/assets/images/jam_directions_menu.png" alt="mobile menu" />
       </button>
+
+      <!-- Mobile Menu -->
       <div
         :class="{ block: isMenuOpen, hidden: !isMenuOpen }"
         class="mobile-menu absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50"
@@ -74,19 +87,29 @@
           </button>
           <ul class="space-y-4 text-center h-full flex flex-col justify-center">
             <nuxt-link class="w-1/1.7 mx-auto" to="/">
-              <li class="bg-darkest p-4 font-bold">HOME</li>
+              <li class="bg-darkest p-4 font-bold text-sm md:text-base">
+                HOME
+              </li>
             </nuxt-link>
             <nuxt-link class="w-1/1.7 mx-auto" to="/blog">
-              <li class="bg-darkest p-4 font-bold">BLOG</li>
+              <li class="bg-darkest p-4 font-bold text-sm md:text-base">
+                BLOG
+              </li>
             </nuxt-link>
             <nuxt-link class="w-1/1.7 mx-auto" to="/projects">
-              <li class="bg-darkest p-4 font-bold">PROJECTS</li>
+              <li class="bg-darkest p-4 font-bold text-sm md:text-base">
+                PROJECTS
+              </li>
             </nuxt-link>
             <nuxt-link class="w-1/1.7 mx-auto" to="/learning">
-              <li class="bg-darkest p-4 font-bold">LEARNING</li>
+              <li class="bg-darkest p-4 font-bold text-sm md:text-base">
+                LEARNING
+              </li>
             </nuxt-link>
             <nuxt-link class="w-1/1.7 mx-auto" to="/about">
-              <li class="bg-darkest p-4 font-bold">ABOUT</li>
+              <li class="bg-darkest p-4 font-bold text-sm md:text-base">
+                ABOUT
+              </li>
             </nuxt-link>
           </ul>
         </div>
@@ -94,13 +117,17 @@
     </nav>
 
     <!-- Hero Section -->
+
     <section
       class="relative text-center py-20 sm:h-[75vh] flex items-center justify-center"
     >
+      <!-- Background Overlays -->
       <div
         class="bg-info absolute inset-0 pointer-events-none h-[10vh] z-11 opacity-20"
       ></div>
       <div class="bg-tertiary absolute inset-0 pointer-events-none"></div>
+
+      <!-- Background Images -->
       <img
         src="/assets/images/curtains.jpg"
         alt="stylistic colors hero image"
@@ -111,15 +138,21 @@
         alt="hero"
         class="absolute inset-0 w-full h-full object-cover filter brightness-75 hue-rotate-15 saturate-150 opacity-50"
       />
+
+      <!-- Hero Content -->
       <div class="relative z-10 md:space-y-12">
-        <h1 class="lg:text-3xl text-2xl font-bold text-lighter">
+        <!-- Heading -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-lighter">
           Coding Insights and Learning Resources
         </h1>
+
+        <!-- Call-to-Action Button -->
         <nuxt-link
           to="/blog"
-          class="text-xl mt-4 inline-block bg-dark text-white px-8 py-2 rounded-sm"
-          >Read</nuxt-link
+          class="font-sans mt-4 inline-block bg-dark text-white px-8 py-2 rounded-sm text-base sm:text-lg md:text-xl"
         >
+          Read
+        </nuxt-link>
       </div>
     </section>
 
@@ -157,7 +190,7 @@
             alt="project"
             class="w-full h-40 object-cover"
           />
-          <h3 class="mt-2 font-bold">{{ project.title }}</h3>
+          <h3 class="text-h3 mt-2 font-bold">{{ project.title }}</h3>
           <p>{{ project.description }}</p>
         </div>
       </template>
@@ -171,7 +204,7 @@
 
     <!-- Learning Section -->
     <section class="py-10 px-4">
-      <h2 class="text-2xl font-bold text-center">Learning</h2>
+      <h2 class="text-h2 font-bold text-center">Learning</h2>
       <div class="flex justify-center space-x-4 mt-4">
         <nuxt-link
           to="/learning/quizzes"
@@ -196,7 +229,7 @@
       <div
         class="max-w-4xl mx-auto text-left bg_black_grade h-full py-10 sm:px-20 px-5 my-0"
       >
-        <h2 class="text-2xl font-bold text-center pb-10">Our Mission</h2>
+        <h2 class="text-h2 font-bold text-center pb-10">Our Mission</h2>
         <p class="lh-loose text-justify">{{ missionText }}</p>
       </div>
     </section>
@@ -204,9 +237,9 @@
     <!-- Footer Section -->
     <footer class="py-4 bg-tertiary text-darkest text-center">
       <div class="flex justify-center space-x-4 mt-2">
-        <a href="#" class="text-xl"><i class="fab fa-facebook"></i></a>
-        <a href="#" class="text-xl"><i class="fab fa-linkedin"></i></a>
-        <a href="#" class="text-xl"><i class="fab fa-github"></i></a>
+        <a href="#" class=""><i class="fab fa-facebook"></i></a>
+        <a href="#" class=""><i class="fab fa-linkedin"></i></a>
+        <a href="#" class=""><i class="fab fa-github"></i></a>
       </div>
       <div class="my-2">
         <nuxt-link to="/">Home</nuxt-link> |
