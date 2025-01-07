@@ -144,7 +144,7 @@
         </div>
       </div>
       <!-- Pagination Controls -->
-      <PaginationSection
+      <Pagination
         :currentPage="currentPage"
         :totalPages="totalPages"
         @prevPage="prevPage"
@@ -219,7 +219,6 @@
 </template>
 
 <script setup>
-import "~/components/BlogCard.vue";
 const route = useRoute();
 const isActive = (linkPath) => route.path == linkPath;
 let isMenuOpen = ref(false);
