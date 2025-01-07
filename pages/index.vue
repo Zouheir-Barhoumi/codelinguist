@@ -149,9 +149,8 @@
     <div class="h-0.5 bg-darkest h1"></div>
 
     <!-- Projects Section -->
-    <section class="py-10 bg-lighter">
-      <h2 class="text-2xl font-bold text-center">Projects</h2>
-      <div class="flex flex-wrap justify-center mt-4">
+    <ContentSection title="Projects" :bgColor="'bg-lighter'">
+      <template #content>
         <div v-for="project in projects" :key="project.id" class="w-80 p-4">
           <img
             :src="project.image"
@@ -161,8 +160,14 @@
           <h3 class="mt-2 font-bold">{{ project.title }}</h3>
           <p>{{ project.description }}</p>
         </div>
-      </div>
-    </section>
+      </template>
+      <template #pagination>
+        <!-- Pagination Controls -->
+      </template>
+    </ContentSection>
+
+    <!-- Divider -->
+    <div class="h-0.5 bg-darkest h1"></div>
 
     <!-- Learning Section -->
     <section class="py-10 px-4">

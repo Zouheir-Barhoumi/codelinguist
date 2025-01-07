@@ -1,5 +1,5 @@
 <template>
-  <section class="py-10 bg-light relative">
+  <section class="py-10 relative" :class="bgColor">
     <div
       class="wrapper border border-2 border-dark bg-primary pb-20 flex flex-col items-center"
     >
@@ -21,6 +21,10 @@ const props = defineProps({
   title: {
     type: String,
     required: true,
+  },
+  bgColor: {
+    type: String,
+    default: "bg-light",
   },
 });
 </script>
