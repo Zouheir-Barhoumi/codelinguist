@@ -145,6 +145,9 @@
       </template>
     </ContentSection>
 
+    <!-- Divider -->
+    <div class="h-0.5 bg-darkest h1"></div>
+
     <!-- Projects Section -->
     <section class="py-10 bg-lighter">
       <h2 class="text-2xl font-bold text-center">Projects</h2>
