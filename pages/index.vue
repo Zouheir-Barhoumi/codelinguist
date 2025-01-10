@@ -15,14 +15,14 @@
       <div
         class="desktop-menu hidden sm:block w-full h-full bg-opacity-50 z-50"
       >
-        <div class="text-dark">
+        <div class="text-dark font-ibm">
           <ul
             class="space-x-8 flex flex-row justify-end uppercase tracking-wider"
           >
             <li>
               <nuxt-link
                 to="/"
-                class="p-3 text-base md:text-lg font-bold"
+                class="p-3 text-base md:text-lg"
                 :class="{ active_page: isActive('/') }"
               >
                 Home
@@ -31,7 +31,7 @@
             <li>
               <nuxt-link
                 to="/blog"
-                class="p-3 text-base md:text-lg font-bold"
+                class="p-3 text-base md:text-lg"
                 :class="{ active_page: isActive('/blog') }"
               >
                 Blog
@@ -40,7 +40,7 @@
             <li>
               <nuxt-link
                 to="/projects"
-                class="p-3 text-base md:text-lg font-bold"
+                class="p-3 text-base md:text-lg"
                 :class="{ active_page: isActive('/projects') }"
               >
                 Projects
@@ -49,7 +49,7 @@
             <li>
               <nuxt-link
                 to="/learning"
-                class="p-3 text-base md:text-lg font-bold"
+                class="p-3 text-base md:text-lg"
                 :class="{ active_page: isActive('/learning') }"
               >
                 Learning
@@ -58,7 +58,7 @@
             <li>
               <nuxt-link
                 to="/about"
-                class="p-3 text-base md:text-lg font-bold"
+                class="p-3 text-base md:text-lg"
                 :class="{ active_page: isActive('/about') }"
               >
                 About
@@ -156,7 +156,7 @@
         <!-- Call-to-Action Button -->
         <nuxt-link
           to="/blog"
-          class="font-ibm mt-4 inline-block bg-dark text-white px-8 py-2 rounded-sm text-base sm:text-lg md:text-xl"
+          class="font-ibm mt-4 inline-block bg-dark text-white px-8 py-4 md:py-3 rounded-md text-base sm:text-lg md:text-2xl tracking-wider"
         >
           Read
         </nuxt-link>
