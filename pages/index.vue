@@ -6,10 +6,7 @@
     >
       <!-- Logo -->
       <div>
-        <nuxt-link
-          to="/"
-          class="font-caveat text-4xl md:text-5xl font-bold text-dark mr-4"
-        >
+        <nuxt-link to="/" class="font-ibm text-3xl font-bold text-dark mr-4">
           CodeLinguist
         </nuxt-link>
       </div>
@@ -25,7 +22,7 @@
             <li>
               <nuxt-link
                 to="/"
-                class="p-3 text-sm md:text-base"
+                class="p-3 text-base md:text-lg font-bold"
                 :class="{ active_page: isActive('/') }"
               >
                 Home
@@ -34,7 +31,7 @@
             <li>
               <nuxt-link
                 to="/blog"
-                class="p-3 text-sm md:text-base"
+                class="p-3 text-base md:text-lg font-bold"
                 :class="{ active_page: isActive('/blog') }"
               >
                 Blog
@@ -43,7 +40,7 @@
             <li>
               <nuxt-link
                 to="/projects"
-                class="p-3 text-sm md:text-base"
+                class="p-3 text-base md:text-lg font-bold"
                 :class="{ active_page: isActive('/projects') }"
               >
                 Projects
@@ -52,7 +49,7 @@
             <li>
               <nuxt-link
                 to="/learning"
-                class="p-3 text-sm md:text-base"
+                class="p-3 text-base md:text-lg font-bold"
                 :class="{ active_page: isActive('/learning') }"
               >
                 Learning
@@ -61,7 +58,7 @@
             <li>
               <nuxt-link
                 to="/about"
-                class="p-3 text-sm md:text-base"
+                class="p-3 text-base md:text-lg font-bold"
                 :class="{ active_page: isActive('/about') }"
               >
                 About
@@ -87,27 +84,37 @@
           </button>
           <ul class="space-y-4 text-center h-full flex flex-col justify-center">
             <nuxt-link class="w-1/1.7 mx-auto" to="/">
-              <li class="bg-darkest p-4 font-bold text-sm md:text-base">
+              <li
+                class="bg-darkest p-4 font-bold text-base md:text-lg font-bold"
+              >
                 HOME
               </li>
             </nuxt-link>
             <nuxt-link class="w-1/1.7 mx-auto" to="/blog">
-              <li class="bg-darkest p-4 font-bold text-sm md:text-base">
+              <li
+                class="bg-darkest p-4 font-bold text-base md:text-lg font-bold"
+              >
                 BLOG
               </li>
             </nuxt-link>
             <nuxt-link class="w-1/1.7 mx-auto" to="/projects">
-              <li class="bg-darkest p-4 font-bold text-sm md:text-base">
+              <li
+                class="bg-darkest p-4 font-bold text-base md:text-lg font-bold"
+              >
                 PROJECTS
               </li>
             </nuxt-link>
             <nuxt-link class="w-1/1.7 mx-auto" to="/learning">
-              <li class="bg-darkest p-4 font-bold text-sm md:text-base">
+              <li
+                class="bg-darkest p-4 font-bold text-base md:text-lg font-bold"
+              >
                 LEARNING
               </li>
             </nuxt-link>
             <nuxt-link class="w-1/1.7 mx-auto" to="/about">
-              <li class="bg-darkest p-4 font-bold text-sm md:text-base">
+              <li
+                class="bg-darkest p-4 font-bold text-base md:text-lg font-bold"
+              >
                 ABOUT
               </li>
             </nuxt-link>
