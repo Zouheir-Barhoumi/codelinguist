@@ -1,167 +1,24 @@
 <template>
   <div class="bg-primary">
     <!-- Navbar -->
-    <nav
-      class="flex justify-between items-center p-4 sm:px-8 md:px-16 2xl:px-32"
-    >
-      <!-- Logo -->
-      <div>
-        <nuxt-link to="/" class="font-ibm text-3xl font-bold text-dark mr-4">
-          CodeLinguist
-        </nuxt-link>
-      </div>
-
-      <!-- Desktop Menu -->
-      <div
-        class="desktop-menu hidden sm:block w-full h-full bg-opacity-50 z-50"
-      >
-        <div class="text-dark font-ibm">
-          <ul
-            class="space-x-8 flex flex-row justify-end uppercase tracking-wider"
-          >
-            <li>
-              <nuxt-link
-                to="/"
-                class="p-3 text-base md:text-lg"
-                :class="{ active_page: isActive('/') }"
-              >
-                Home
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link
-                to="/blog"
-                class="p-3 text-base md:text-lg"
-                :class="{ active_page: isActive('/blog') }"
-              >
-                Blog
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link
-                to="/projects"
-                class="p-3 text-base md:text-lg"
-                :class="{ active_page: isActive('/projects') }"
-              >
-                Projects
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link
-                to="/learning"
-                class="p-3 text-base md:text-lg"
-                :class="{ active_page: isActive('/learning') }"
-              >
-                Learning
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link
-                to="/about"
-                class="p-3 text-base md:text-lg"
-                :class="{ active_page: isActive('/about') }"
-              >
-                About
-              </nuxt-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Mobile Menu Button -->
-      <button @click="toggleMenu" class="sm:hidden">
-        <img src="/assets/images/jam_directions_menu.png" alt="mobile menu" />
-      </button>
-
-      <!-- Mobile Menu -->
-      <div
-        :class="{ block: isMenuOpen, hidden: !isMenuOpen }"
-        class="mobile-menu absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50"
-      >
-        <div class="bg-primary text-light p-4 h-full">
-          <button @click="toggleMenu" class="absolute top-5 right-5 w-8 h-8">
-            <img src="/assets/images/oi_x.svg" alt="close menu" />
-          </button>
-          <ul class="space-y-4 text-center h-full flex flex-col justify-center">
-            <nuxt-link class="w-1/1.7 mx-auto" to="/">
-              <li
-                class="bg-darkest p-4 font-bold text-base md:text-lg font-bold"
-              >
-                HOME
-              </li>
-            </nuxt-link>
-            <nuxt-link class="w-1/1.7 mx-auto" to="/blog">
-              <li
-                class="bg-darkest p-4 font-bold text-base md:text-lg font-bold"
-              >
-                BLOG
-              </li>
-            </nuxt-link>
-            <nuxt-link class="w-1/1.7 mx-auto" to="/projects">
-              <li
-                class="bg-darkest p-4 font-bold text-base md:text-lg font-bold"
-              >
-                PROJECTS
-              </li>
-            </nuxt-link>
-            <nuxt-link class="w-1/1.7 mx-auto" to="/learning">
-              <li
-                class="bg-darkest p-4 font-bold text-base md:text-lg font-bold"
-              >
-                LEARNING
-              </li>
-            </nuxt-link>
-            <nuxt-link class="w-1/1.7 mx-auto" to="/about">
-              <li
-                class="bg-darkest p-4 font-bold text-base md:text-lg font-bold"
-              >
-                ABOUT
-              </li>
-            </nuxt-link>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <Navigation> </Navigation>
 
     <!-- Hero Section -->
 
-    <section
-      class="relative text-center py-20 sm:h-[75vh] flex items-center justify-center"
+    <HeroSection
+      title="Coding Insights and Learning Resources"
+      :setHeight="true"
     >
-      <!-- Background Overlays -->
-      <div
-        class="bg-info absolute inset-0 pointer-events-none h-[10vh] z-11 opacity-20"
-      ></div>
-      <div class="bg-tertiary absolute inset-0 pointer-events-none"></div>
-
-      <!-- Background Images -->
-      <img
-        src="/assets/images/curtains.jpg"
-        alt="stylistic colors hero image"
-        class="absolute inset-0 w-full h-full object-cover opacity-15"
-      />
-      <img
-        src="/assets/images/modern_bg.jpeg"
-        alt="hero"
-        class="absolute inset-0 w-full h-full object-cover filter brightness-75 hue-rotate-15 saturate-150 opacity-50"
-      />
-
-      <!-- Hero Content -->
-      <div class="relative z-10 md:space-y-12">
-        <!-- Heading -->
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-lighter">
-          Coding Insights and Learning Resources
-        </h1>
-
+      <template #button>
         <!-- Call-to-Action Button -->
         <nuxt-link
           to="/blog"
-          class="font-ibm mt-4 inline-block bg-dark text-white px-8 py-4 md:py-3 rounded-md text-base sm:text-lg md:text-2xl tracking-wider"
+          class="font-ibm mt-4 inline-block bg-dark text-white px-8 py-3 2xl:py-4 rounded-md text-md sm:text-lg md:text-xl tracking-wider uppercase"
         >
           Read
         </nuxt-link>
-      </div>
-    </section>
+      </template>
+    </HeroSection>
 
     <!-- Divider -->
     <div class="h-0.5 bg-darkest h1"></div>
@@ -261,8 +118,7 @@
 
 <script setup>
 const route = useRoute();
-const isActive = (linkPath) => route.path == linkPath;
-let isMenuOpen = ref(false);
+
 const blogPosts = ref([
   {
     id: 1,
@@ -336,10 +192,6 @@ const projects = ref([
 ]);
 const missionText = `At the CodeLinguist, our strategy isn't strictly about code writing—We don't believe in programming mastery through abstract algorithms or overly complex projects either. Instead we focus on the small, yet, powerful pieces of functionality that are the building blocks of every application. By breaking down concepts to low-level functions we aim to provide practical, reusable skills that can be applied across countless programming scenarios. Our mission is to make the coding process a manageable, masteful exercise by transforming complex ideas into clear insights—enabling you to learn and build real programming skills and a unique aproach.`;
 
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value;
-};
-
 const getBorderStyle = (post) => {
   const randomIndex = Math.floor(Math.random() * 7) + 1;
   return {
@@ -352,12 +204,6 @@ const getBorderStyle = (post) => {
 </script>
 
 <style>
-.active_page {
-  /* font-weight: bold; */
-  background-image: url(/_nuxt/assets/images/box.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 .bg_black_grade {
   background: linear-gradient(
     135deg,

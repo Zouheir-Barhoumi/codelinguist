@@ -44,7 +44,7 @@ const slug = route.params.slug;
 // Find the blog post by slug
 const post = blogPosts.find((post) => post.slug === slug);
 
-if (!content) {
+if (!post.content.length > 1) {
   console.error(`No blog post found for slug: ${slug}`);
 }
 </script>
