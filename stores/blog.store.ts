@@ -40,7 +40,7 @@ export const useBlogStore = defineStore("blog", {
           "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am",
         image: "/_nuxt/assets/images/blog-post-1.jpg",
         slug: "blog-post-4",
-        topics: ["topic5", "topic6"],
+        topics: ["Laravel", "Vue"],
         date: "22/10/2024",
       },
       {
@@ -50,13 +50,13 @@ export const useBlogStore = defineStore("blog", {
           "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am",
         image: "/_nuxt/assets/images/blog-post-1.jpg",
         slug: "blog-post-5",
-        topics: ["topic5", "topic6"],
+        topics: ["Functional", "Programming"],
         date: "22/10/2024",
       },
     ],
   }),
   getters: {
-    getBlogPosts: (state) => state.blogPosts, // Getter to retrieve all blog posts
+    getBlogPosts: (state) => state.blogPosts,
     getBlogPostById: (state) => (id: number) => {
       return state.blogPosts.find((post) => post.id === id);
     },
