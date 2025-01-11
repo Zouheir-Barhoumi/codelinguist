@@ -13,9 +13,9 @@
         <!-- Call-to-Action Button -->
         <nuxt-link
           to="/blog"
-          class="font-ibm mt-4 inline-block bg-dark text-white px-8 py-3 2xl:py-4 rounded-md text-md sm:text-lg md:text-xl tracking-wider uppercase"
+          class="mt-4 inline-block bg-dark text-white px-8 py-3 2xl:py-4 rounded-md text-md sm:text-lg md:text-xl tracking-wider uppercase hover:bg-opacity-90 transition duration-300 ease-in-out"
         >
-          Read
+          Start Reading
         </nuxt-link>
       </template>
     </HeroSection>
@@ -26,7 +26,7 @@
     <!-- Blog Section -->
     <ContentSection title="Blog">
       <template #content>
-        <div v-for="post in pageItems" :key="post.id">
+        <div v-for="post in bpi" :key="post.id">
           <!-- Blog Cards -->
           <BlogCard :post="post" />
         </div>
@@ -34,10 +34,10 @@
       <template #pagination>
         <!-- Pagination Controls -->
         <Pagination
-          :currentPage="currentPage"
-          :totalPages="totalPages"
-          @prevPage="prevPage"
-          @nextPage="nextPage"
+          :currentPage="bcp"
+          :totalPages="btp"
+          @prevPage="bpp"
+          @nextPage="bnp"
         />
       </template>
     </ContentSection>
@@ -173,8 +173,13 @@ const blogPosts = ref([
 ]);
 
 // Pagination
-const { currentPage, totalPages, pageItems, nextPage, prevPage } =
-  usePagination(blogPosts.value, 3);
+const {
+  currentPage: bcp,
+  totalPages: btp,
+  pageItems: bpi,
+  nextPage: bnp,
+  prevPage: bpp,
+} = usePagination(blogPosts.value, 3);
 
 const projects = ref([
   {
