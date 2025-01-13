@@ -34,6 +34,7 @@
       <template #pagination>
         <!-- Pagination Controls -->
         <Pagination
+          v-if="btp > 1"
           :currentPage="bcp"
           :totalPages="btp"
           @prevPage="bpp"
@@ -48,14 +49,37 @@
     <!-- Projects Section -->
     <ContentSection title="Projects" :bgColor="'bg-lighter'">
       <template #content>
-        <div v-for="project in projects" :key="project.id" class="w-80 p-4">
-          <img
-            :src="project.image"
-            alt="project"
-            class="w-full h-40 object-cover"
-          />
-          <h3 class="text-h3 mt-2 font-bold">{{ project.title }}</h3>
-          <p>{{ project.description }}</p>
+        <div v-for="project in ppi" :key="project.id">
+          <nuxt-link :to="`/projects/${project.slug}`">
+            <div
+              class="max-w-80 h-80 bg-lighter border border-2 border-darker text-center py-2"
+            >
+              <!-- Title -->
+              <h3 class="text-h3 md:text-2xl 2xl:text-3xl font-bold mb-2">
+                {{ project.title }}
+              </h3>
+              <!-- Image -->
+              <div class="w-full bg-tertiary/60 relative">
+                <div
+                  class="w-full h-full bg-cover bg-center absolute top-0 left-0 opacity-15"
+                  style="
+                    background-image: url('/_nuxt/assets/images/curtains.jpg');
+                  "
+                ></div>
+                <img
+                  :src="project.image"
+                  class="w-full h-full opacity-60 filter saturate-140"
+                  alt="Project Image"
+                />
+              </div>
+              <!-- Summary -->
+              <div>
+                <p class="text-base md:text-lg lg:text-xl text-grey py-2">
+                  {{ project.description }}
+                </p>
+              </div>
+            </div>
+          </nuxt-link>
         </div>
       </template>
       <template #pagination>
@@ -118,7 +142,8 @@
 
 <script setup>
 const blogStore = useBlogStore();
-// Pagination
+const projectStore = useProjectStore();
+// Pagination for blog posts
 const {
   currentPage: bcp,
   totalPages: btp,
@@ -127,20 +152,15 @@ const {
   prevPage: bpp,
 } = usePagination(blogStore.blogPosts, 3);
 
-const projects = ref([
-  {
-    id: 1,
-    title: "Angular Project",
-    image: "/_nuxt/assets/images/angular-project.jpg",
-    description: "Short summary...",
-  },
-  {
-    id: 2,
-    title: "Next Gen Project",
-    image: "/_nuxt/assets/images/next-gen-project.jpg",
-    description: "Short summary...",
-  },
-]);
+// Pagination for projects
+const {
+  currentPage: pcp,
+  totalPages: ttp,
+  pageItems: ppi,
+  nextPage: pnp,
+  prevPage: ppp,
+} = usePagination(projectStore.projects, 2);
+
 const missionText = `At the CodeLinguist, our strategy isn't strictly about code writing—We don't believe in programming mastery through abstract algorithms or overly complex projects either. Instead we focus on the small, yet, powerful pieces of functionality that are the building blocks of every application. By breaking down concepts to low-level functions we aim to provide practical, reusable skills that can be applied across countless programming scenarios. Our mission is to make the coding process a manageable, masteful exercise by transforming complex ideas into clear insights—enabling you to learn and build real programming skills and a unique aproach.`;
 
 const getBorderStyle = (post) => {

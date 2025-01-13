@@ -29,7 +29,7 @@
       <!-- Read More Button -->
       <div class="flex justify-end">
         <nuxt-link
-          :to="`/blog/${post.id}`"
+          :to="`/blog/${post.slug}`"
           class="font-sans text-darkest bg-tertiary px-4 py-2 rounded-sm cursor-pointer text-base md:text-lg 2xl:text-xl"
         >
           Read more
