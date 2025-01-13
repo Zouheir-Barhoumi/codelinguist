@@ -84,6 +84,13 @@
       </template>
       <template #pagination>
         <!-- Pagination Controls -->
+        <Pagination
+          v-if="ptp > 1"
+          :currentPage="pcp"
+          :totalPages="ptp"
+          @prevPage="ppp"
+          @nextPage="pnp"
+        />
       </template>
     </ContentSection>
 
@@ -155,11 +162,11 @@ const {
 // Pagination for projects
 const {
   currentPage: pcp,
-  totalPages: ttp,
+  totalPages: ptp,
   pageItems: ppi,
   nextPage: pnp,
   prevPage: ppp,
-} = usePagination(projectStore.projects, 2);
+} = usePagination(projectStore.projects, 3);
 
 const missionText = `At the CodeLinguist, our strategy isn't strictly about code writing—We don't believe in programming mastery through abstract algorithms or overly complex projects either. Instead we focus on the small, yet, powerful pieces of functionality that are the building blocks of every application. By breaking down concepts to low-level functions we aim to provide practical, reusable skills that can be applied across countless programming scenarios. Our mission is to make the coding process a manageable, masteful exercise by transforming complex ideas into clear insights—enabling you to learn and build real programming skills and a unique aproach.`;
 
