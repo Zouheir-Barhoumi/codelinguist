@@ -4,8 +4,13 @@
   >
     <!-- Logo -->
     <div>
-      <nuxt-link to="/" class="text-5xl font-bold text-dark mr-4 lh-5">
-        CodeLinguist
+      <nuxt-link to="/">
+        <div
+          class="glitch text-5xl font-bold text-dark mr-4 lh-5"
+          data-glitch="CodeLinguist"
+        >
+          CodeLinguist
+        </div>
       </nuxt-link>
     </div>
 
@@ -127,5 +132,60 @@ const isActive = (route) => useRoute().path === route;
   background-size: cover;
   background-repeat: no-repeat;
   border-bottom: 2px solid #201100;
+}
+
+.glitch {
+  position: relative;
+  z-index: 1;
+}
+
+.glitch:before,
+.glitch:after {
+  display: block;
+  content: attr(data-glitch);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+.glitch:before {
+  animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
+    infinite;
+  color: #9cff99;
+  z-index: -1;
+}
+
+.glitch:after {
+  animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both
+    infinite;
+  color: #ff9999;
+  z-index: -2;
+}
+
+@keyframes glitch-color {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-3px, 3px);
+  }
+
+  40% {
+    transform: translate(-3px, -3px);
+  }
+
+  60% {
+    transform: translate(3px, 3px);
+  }
+
+  80% {
+    transform: translate(3px, -3px);
+  }
+
+  to {
+    transform: translate(0);
+  }
 }
 </style>

@@ -167,4 +167,10 @@ const getBorderStyle = (post) => {
     rgba(86, 86, 86, 1) 100%
   );
 }
+.bg-lighter-s {
+  background-image: repeating-conic-gradient(#f6e6d5 0% 25%, #f9f4ef 0% 50%);
+  background-position: 0 0, 32px 32px;
+  background-size: 64px 64px;
+  background-color: #f9f4ef;
+}
 </style>
