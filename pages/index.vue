@@ -21,7 +21,7 @@
     </HeroSection>
 
     <!-- Divider -->
-    <div class="h-0.5 bg-darkest h1"></div>
+    <div class="h-0.5 bg-darkest"></div>
 
     <!-- Blog Section -->
     <ContentSection title="Blog">
@@ -44,7 +44,7 @@
     </ContentSection>
 
     <!-- Divider -->
-    <div class="h-0.5 bg-darkest h1"></div>
+    <div class="h-0.5 bg-darkest"></div>
 
     <!-- Projects Section -->
     <ContentSection title="Projects" :bgColor="'bg-lighter'">
@@ -69,7 +69,7 @@
     </ContentSection>
 
     <!-- Divider -->
-    <div class="h-0.5 bg-darkest h1"></div>
+    <div class="h-0.5 bg-darkest"></div>
 
     <!-- Learning Section -->
     <ContentSection title="Learning" :bgColor="'bg-light'" layoutType="grid">
@@ -85,43 +85,35 @@
         </div>
       </template>
     </ContentSection>
-    <section class="py-10 px-4">
-      <h2 class="text-h2 font-bold text-center">Learning</h2>
-      <div class="flex justify-center space-x-4 mt-4">
-        <nuxt-link
-          to="/learning/quizzes"
-          class="w-40 p-4 bg-tertiary text-darkest text-center"
-          >Quizzes</nuxt-link
-        >
-        <nuxt-link
-          to="/learning/interactive"
-          class="w-40 p-4 bg-tertiary text-darkest text-center"
-          >Interactive</nuxt-link
-        >
-        <nuxt-link
-          to="/learning/lessons"
-          class="w-40 p-4 bg-tertiary text-darkest text-center"
-          >Lessons</nuxt-link
-        >
-      </div>
-    </section>
 
     <!-- Our Mission Section -->
     <section class="bg-bg-custom-black text-white">
       <div
         class="max-w-4xl mx-auto text-left bg_black_grade h-full py-10 sm:px-20 px-5 my-0"
       >
-        <h2 class="text-h2 font-bold text-center pb-10">Our Mission</h2>
-        <p class="lh-loose text-justify">{{ missionText }}</p>
+        <h2
+          class="text-h1 2xl:text-5xl font-bold mb-10 w-fit mx-auto tracking-wider"
+        >
+          Our Mission
+        </h2>
+        <p class="text-base 2xl:text-2xl md:lh-loose text-justify">
+          {{ missionText }}
+        </p>
       </div>
     </section>
 
     <!-- Footer Section -->
-    <footer class="py-4 bg-tertiary text-darkest text-center">
+    <footer
+      class="py-4 bg-tertiary text-darkest text-center text-base md:text-2xl lg:text-3xl"
+    >
       <div class="flex justify-center space-x-4 mt-2">
-        <a href="#" class=""><i class="fab fa-facebook"></i></a>
-        <a href="#" class=""><i class="fab fa-linkedin"></i></a>
-        <a href="#" class=""><i class="fab fa-github"></i></a>
+        <router-link to="#" class=""
+          ><i class="fab fa-facebook"></i
+        ></router-link>
+        <router-link to="#" class=""
+          ><i class="fab fa-linkedin"></i
+        ></router-link>
+        <router-link to="#" class=""><i class="fab fa-github"></i></router-link>
       </div>
       <div class="my-2">
         <nuxt-link to="/">Home</nuxt-link> |
@@ -129,7 +121,9 @@
         <nuxt-link to="/projects">Projects</nuxt-link> |
         <nuxt-link to="/learning">Learning</nuxt-link>
       </div>
-      <p class="tracking-widest">© 2024 CodeLinguist. All rights reserved.</p>
+      <p class="mt-4 md:mt-6 tracking-widest text-base">
+        © 2024 CodeLinguist. All rights reserved.
+      </p>
     </footer>
   </div>
 </template>
