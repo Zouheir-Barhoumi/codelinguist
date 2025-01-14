@@ -8,7 +8,7 @@
       >
         {{ title }}
       </h2>
-      <div class="flex flex-wrap justify-center gap-6 max-w-5xl">
+      <div :class="dynamicClass">
         <slot name="content"></slot>
       </div>
     </div>
@@ -26,5 +26,15 @@ const props = defineProps({
     type: String,
     default: "bg-light",
   },
+  layoutType: {
+    type: String,
+    default: "flex",
+  },
+});
+
+const dynamicClass = computed(() => {
+  return props.layoutType === "grid"
+    ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-6"
+    : "flex flex-wrap justify-center gap-6 max-w-5xl";
 });
 </script>

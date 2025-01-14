@@ -7,14 +7,14 @@
       {{ resource.title }}
     </h3>
     <!-- Image -->
-    <div class="w-full bg-tertiary/60 relative">
+    <div class="w-full bg-tertiary/60 relative overflow-hidden">
       <div
-        class="w-full h-full bg-cover bg-center absolute top-0 left-0 opacity-15"
+        class="w-70 h-70 bg-cover bg-center absolute top-0 left-0 opacity-18"
         style="background-image: url('/_nuxt/assets/images/curtains.jpg')"
       ></div>
       <img
         :src="resource.image"
-        class="w-full h-full opacity-60 filter saturate-140"
+        class="w-full h-full opacity-40 filter contrast-120"
         alt="Resource Image"
       />
     </div>

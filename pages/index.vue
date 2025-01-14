@@ -72,9 +72,13 @@
     <div class="h-0.5 bg-darkest h1"></div>
 
     <!-- Learning Section -->
-    <ContentSection title="Learning" :bgColor="'bg-light'">
+    <ContentSection title="Learning" :bgColor="'bg-light'" layoutType="grid">
       <template #content>
-        <div v-for="resource in lpi" :key="resource.id">
+        <div
+          v-for="resource in lpi"
+          :key="resource.id"
+          class="bg-secondary w-fit"
+        >
           <nuxt-link>
             <LearningCard :resource="resource" />
           </nuxt-link>
