@@ -1,7 +1,7 @@
 <!-- components/BlogCard.vue -->
 <template>
   <div
-    class="mh-60 md:h-80 w-80 border border-solid border-2 bg-lighter backdrop-blur-md flex flex-col justify-between p-2 font-caveat relative"
+    class="mh-60 md:h-80 w-80 bg-lighter backdrop-blur-md flex flex-col justify-between p-2 font-caveat relative"
     :style="getBorderStyle(post.id)"
   >
     <!-- Background Image -->

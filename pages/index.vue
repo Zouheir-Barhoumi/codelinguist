@@ -72,6 +72,15 @@
     <div class="h-0.5 bg-darkest h1"></div>
 
     <!-- Learning Section -->
+    <ContentSection title="Learning" :bgColor="'bg-light'">
+      <template #content>
+        <div v-for="resource in lpi" :key="resource.id">
+          <nuxt-link>
+            <LearningCard :resource="resource" />
+          </nuxt-link>
+        </div>
+      </template>
+    </ContentSection>
     <section class="py-10 px-4">
       <h2 class="text-h2 font-bold text-center">Learning</h2>
       <div class="flex justify-center space-x-4 mt-4">
@@ -124,6 +133,8 @@
 <script setup>
 const blogStore = useBlogStore();
 const projectStore = useProjectStore();
+const learningStore = useLearningStore();
+
 // Pagination for blog posts
 const {
   currentPage: bcp,
@@ -141,6 +152,15 @@ const {
   nextPage: pnp,
   prevPage: ppp,
 } = usePagination(projectStore.projects, 3);
+
+// Pagination for learning resources
+const {
+  currentPage: lcp,
+  totalPages: ltp,
+  pageItems: lpi,
+  nextPage: lnp,
+  prevPage: lpp,
+} = usePagination(learningStore.resources, 5);
 
 const missionText = `At the CodeLinguist, our strategy isn't strictly about code writing—We don't believe in programming mastery through abstract algorithms or overly complex projects either. Instead we focus on the small, yet, powerful pieces of functionality that are the building blocks of every application. By breaking down concepts to low-level functions we aim to provide practical, reusable skills that can be applied across countless programming scenarios. Our mission is to make the coding process a manageable, masteful exercise by transforming complex ideas into clear insights—enabling you to learn and build real programming skills and a unique aproach.`;
 
