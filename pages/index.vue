@@ -87,9 +87,9 @@
     </ContentSection>
 
     <!-- Our Mission Section -->
-    <section class="bg-bg-custom-black text-white">
+    <section class="bg-bg-custom-black text-white py-10">
       <div
-        class="max-w-4xl mx-auto text-left bg_black_grade h-full py-10 sm:px-20 px-5 my-0"
+        class="max-w-4xl mx-auto text-left bg_black_grade h-full py-10 sm:px-20 px-5 my-0 border-2 border-light shadow-custom"
       >
         <h2
           class="text-h1 2xl:text-5xl font-bold mb-10 w-fit mx-auto tracking-wider"
@@ -116,10 +116,15 @@
         <router-link to="#" class=""><i class="fab fa-github"></i></router-link>
       </div>
       <div class="my-2">
-        <nuxt-link to="/">Home</nuxt-link> |
-        <nuxt-link to="/blog">Blog</nuxt-link> |
-        <nuxt-link to="/projects">Projects</nuxt-link> |
-        <nuxt-link to="/learning">Learning</nuxt-link>
+        <nuxt-link class="px-4 md:px-5 lg:px-6" to="/">Home</nuxt-link> |
+        <nuxt-link class="px-4 md:px-5 lg:px-6" to="/blog">Blog</nuxt-link> |
+        <nuxt-link class="px-4 md:px-5 lg:px-6" to="/projects"
+          >Projects</nuxt-link
+        >
+        |
+        <nuxt-link class="px-4 md:px-5 lg:px-6" to="/learning"
+          >Learning</nuxt-link
+        >
       </div>
       <p class="mt-4 md:mt-6 tracking-widest text-base">
         © 2024 CodeLinguist. All rights reserved.
