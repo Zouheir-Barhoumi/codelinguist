@@ -59,5 +59,8 @@ export default defineConfig({
       relaxed: "1.625",
       loose: "2",
     },
+    boxShadow: {
+      custom: "4.5px 5px 8px 0.5px rgba(13, 13, 13, 0.5)",
+    },
   },
 });
