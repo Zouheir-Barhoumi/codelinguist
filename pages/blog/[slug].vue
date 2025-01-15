@@ -22,7 +22,7 @@ const route = useRoute();
 const slug = route.params.slug;
 
 // Find the blog post by slug
-const post = blogStore.blogPosts.find((post) => post.slug === slug);
+const post = blogStore.blogPosts.find((post) => post.slug === slug) || null;
 
 if (!post || !post.content) {
   console.error(`No blog post found for slug: ${slug}`);
