@@ -12,6 +12,8 @@ export const useBlogStore = defineStore("blog", {
         slug: "blog-post-1",
         topics: ["Nuxt", "TS"],
         date: "2025-01-01",
+        content:
+          "lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies ultricies, nunc nisl ultricies nunc, vitae ultricies nisl nunc vitae nisl. Nulla euismod, nisl eget ultricies ultricies, nunc nisl ultricies nunc, vitae ultricies nisl nunc vitae nisl.",
       },
       {
         id: 2,

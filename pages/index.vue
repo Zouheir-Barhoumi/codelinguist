@@ -1,8 +1,5 @@
 <template>
   <div class="bg-primary">
-    <!-- Navbar -->
-    <Navigation> </Navigation>
-
     <!-- Hero Section -->
 
     <HeroSection
