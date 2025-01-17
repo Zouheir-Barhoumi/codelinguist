@@ -112,7 +112,7 @@
         ></router-link>
         <router-link to="#" class=""><i class="fab fa-github"></i></router-link>
       </div>
-      <div class="my-2">
+      <div class="my-2 border-t-2 border-darkest pt-4 w-fit mx-auto">
         <nuxt-link class="px-4 md:px-5 lg:px-6" to="/">Home</nuxt-link> |
         <nuxt-link class="px-4 md:px-5 lg:px-6" to="/blog">Blog</nuxt-link> |
         <nuxt-link class="px-4 md:px-5 lg:px-6" to="/projects"
@@ -123,7 +123,9 @@
           >Learning</nuxt-link
         >
       </div>
-      <p class="mt-4 md:mt-6 tracking-widest text-base">
+      <p
+        class="mt-4 md:mt-6 tracking-widest text-base border-t-2 border-darkest p-4 w-fit mx-auto"
+      >
         © 2024 CodeLinguist. All rights reserved.
       </p>
     </footer>
@@ -162,7 +164,7 @@ const {
   prevPage: lpp,
 } = usePagination(learningStore.resources, 5);
 
-const missionText = `At the CodeLinguist, our strategy isn't strictly about code writing—We don't believe in programming mastery through abstract algorithms or overly complex projects either. Instead we focus on the small, yet, powerful pieces of functionality that are the building blocks of every application. By breaking down concepts to low-level functions we aim to provide practical, reusable skills that can be applied across countless programming scenarios. Our mission is to make the coding process a manageable, masteful exercise by transforming complex ideas into clear insights—enabling you to learn and build real programming skills and a unique aproach.`;
+const missionText = `At The CodeLinguist, we believe coding mastery isn’t about memorizing abstract algorithms or slogging through overly complex projects. It’s about understanding the small, powerful building blocks that form the foundation of every great application. We break down programming concepts into their most practical, reusable components, equipping you with skills that transcend languages and frameworks. Our mission is to transform coding from a daunting challenge into a manageable, even enjoyable, journey. By turning complex ideas into clear, actionable insights, we empower you to think creatively, solve real-world problems, and build a unique approach to programming—one that’s as practical as it is profound.`;
 
 const getBorderStyle = (post) => {
   const randomIndex = Math.floor(Math.random() * 7) + 1;

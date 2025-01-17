@@ -5,7 +5,7 @@
   >
     <!-- Background Overlays -->
     <div
-      class="bg-info absolute inset-0 pointer-events-none h-[10vh] z-11 opacity-20"
+      class="top-pane bg-lighter absolute inset-0 pointer-events-none h-[10vh] z-11 opacity-20"
     ></div>
     <div class="bg-tertiary absolute inset-0 pointer-events-none"></div>
 
@@ -23,7 +23,9 @@
     />
 
     <!-- Content -->
-    <div class="relative z-10 md:space-y-12">
+    <div
+      class="glass relative z-10 md:space-y-12 bg-lighter bg-opacity-10 p-4 lg:p-8 border-tertiary rounded-md"
+    >
       <!-- Heading -->
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-lighter">
         {{ title }}
@@ -55,5 +57,9 @@ const props = defineProps({
 <style scoped>
 .customHeight {
   height: 75vh;
+}
+.glass {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 </style>
