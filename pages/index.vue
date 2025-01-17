@@ -3,17 +3,25 @@
     <!-- Hero Section -->
 
     <HeroSection
-      title="Coding Insights and Learning Resources"
+      title="Learn, Build, and Grow with CodeLinguist"
       :setHeight="true"
     >
       <template #button>
         <!-- Call-to-Action Button -->
-        <nuxt-link
-          to="/blog"
-          class="mt-4 inline-block bg-dark text-white px-8 py-3 2xl:py-4 rounded-md text-md sm:text-lg md:text-xl tracking-wider uppercase hover:bg-opacity-90 transition duration-300 ease-in-out"
-        >
-          Start Reading
-        </nuxt-link>
+        <div class="flex flex-row gap-2 mt-6 justify-center flex-wrap">
+          <nuxt-link
+            to="/blog"
+            class="inline-block bg-dark text-white px-8 py-2.5 2xl:py-4 rounded-md text-md md:text-xl tracking-wider uppercase hover:bg-opacity-60 transition duration-300 ease-in-out"
+          >
+            Start Reading
+          </nuxt-link>
+          <nuxt-link
+            to="/"
+            class="inline-block bg-transparent text-light px-8 py-2.5 2xl:py-4 rounded-md text-md md:text-xl tracking-wider uppercase hover:bg-light hover:text-darkest transition-all duration-300 ease-in-out border-2 border-light"
+          >
+            Subscribe
+          </nuxt-link>
+        </div>
       </template>
     </HeroSection>
 

@@ -24,12 +24,18 @@
 
     <!-- Content -->
     <div
-      class="glass relative z-10 md:space-y-12 bg-lighter bg-opacity-10 p-4 lg:p-8 border-tertiary rounded-md"
+      class="glass relative z-10 md:space-y-4 bg-lighter bg-opacity-10 p-4 lg:p-8 border-tertiary rounded-md"
     >
       <!-- Heading -->
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-lighter">
+      <h1
+        class="glitch relative text-4xl sm:text-5xl md:text-6xl font-bold text-lighter"
+        :data-glitch="`${title}`"
+      >
         {{ title }}
       </h1>
+      <h2 class="text-base sm:text-h3 md:text-h2 font-bold my-2 text-grey">
+        Your Gateway to Expert Coding Insights
+      </h2>
       <div>
         <!-- Call-to-Action Button -->
         <slot name="button"></slot>
@@ -61,5 +67,61 @@ const props = defineProps({
 .glass {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+}
+
+.glitch {
+  display: block;
+  background: transparent;
+  z-index: 1;
+}
+
+.glitch:before,
+.glitch:after {
+  display: block;
+  content: attr(data-glitch);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  color: orangered;
+}
+.glitch:before {
+  animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
+    infinite;
+  color: #9cff99;
+  z-index: -1;
+}
+
+.glitch:after {
+  animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both
+    infinite;
+  color: #ff9999;
+  z-index: -2;
+}
+
+@keyframes glitch-color {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-3px, 3px);
+  }
+
+  40% {
+    transform: translate(-3px, -3px);
+  }
+
+  60% {
+    transform: translate(3px, 3px);
+  }
+
+  80% {
+    transform: translate(3px, -3px);
+  }
+
+  to {
+    transform: translate(0);
+  }
 }
 </style>
