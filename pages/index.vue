@@ -101,7 +101,9 @@
         >
           Our Mission
         </h2>
-        <p class="text-base 2xl:text-2xl md:lh-loose text-justify">
+        <p
+          class="text-base lg:text-xl 2xl:text-2xl lh-normal md:lh-loose lg:lh-loose text-justify"
+        >
           {{ missionText }}
         </p>
       </div>
@@ -109,7 +111,7 @@
 
     <!-- Footer Section -->
     <footer
-      class="py-4 bg-tertiary text-darkest text-center text-base md:text-2xl lg:text-3xl"
+      class="py-4 bg-tertiary text-darkest text-center text-2xl lg:text-3xl"
     >
       <div class="flex justify-center space-x-4 mt-2">
         <router-link to="#" class=""
@@ -132,7 +134,7 @@
         >
       </div>
       <p
-        class="mt-4 md:mt-6 tracking-widest text-base border-t-2 border-darkest p-4 w-fit mx-auto"
+        class="mt-4 md:mt-6 tracking-widest lg:text-base border-t-2 border-darkest p-4 w-fit mx-auto"
       >
         © 2024 CodeLinguist. All rights reserved.
       </p>

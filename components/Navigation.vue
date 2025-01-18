@@ -5,7 +5,9 @@
     <!-- Logo -->
     <div>
       <nuxt-link to="/">
-        <div class="text-5xl font-bold text-dark mr-4 lh-5">CodeLinguist</div>
+        <div class="font-ibm text-3xl font-bold text-dark mr-4 lh-5">
+          CodeLinguist
+        </div>
       </nuxt-link>
     </div>
 
@@ -18,7 +20,7 @@
           <li>
             <nuxt-link
               to="/"
-              class="p-3 text-base md:text-lg"
+              class="lg:px-2 text-base md:text-xl"
               :class="{ active_page: isActive('/') }"
             >
               Home
@@ -27,7 +29,7 @@
           <li>
             <nuxt-link
               to="/blog"
-              class="p-3 text-base md:text-lg"
+              class="lg:px-2 text-base sm:text-lg"
               :class="{ active_page: isActive('/blog') }"
             >
               Blog
@@ -36,7 +38,7 @@
           <li>
             <nuxt-link
               to="/projects"
-              class="p-3 text-base md:text-lg"
+              class="lg:px-2 text-base sm:text-lg"
               :class="{ active_page: isActive('/projects') }"
             >
               Projects
@@ -45,7 +47,7 @@
           <li>
             <nuxt-link
               to="/learning"
-              class="p-3 text-base md:text-lg"
+              class="lg:px-2 text-base sm:text-lg"
               :class="{ active_page: isActive('/learning') }"
             >
               Learning
@@ -54,7 +56,7 @@
           <li>
             <nuxt-link
               to="/about"
-              class="p-3 text-base md:text-lg"
+              class="lg:px-2 text-base sm:text-lg"
               :class="{ active_page: isActive('/about') }"
             >
               About
