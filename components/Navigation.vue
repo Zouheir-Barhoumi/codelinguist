@@ -5,7 +5,9 @@
     <!-- Logo -->
     <div>
       <nuxt-link to="/">
-        <div class="font-ibm text-3xl font-bold text-dark mr-4 lh-5">
+        <div
+          class="-translate-y-0.6 font-ibm text-3xl font-bold text-dark lg:mr-4 sm:mr-2"
+        >
           CodeLinguist
         </div>
       </nuxt-link>
