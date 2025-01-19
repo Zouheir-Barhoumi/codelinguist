@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway
+  branch: master
+
+local_backend: true # Disable this in production
+
+media_folder: public/images # FOlder for storing images uploaded by users
+public_folder: /images # Front facing path for media
+
+collections:
+  - name: blog # Used in routes
+    label: Blog Posts # What the admin UI calls the post type.
+    folder: data/posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - {
+          label: "Featured Image",
+          name: "image",
+          widget: "image",
+          media_folder: "public/images",
+          public folder: "/images",
+        }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+          date_format: "YYYY-MM-DD",
+          timee_format: false,
+        }
+      - { label: "Background Color", name: "bgColor", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
