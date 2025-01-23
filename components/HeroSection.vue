@@ -105,19 +105,19 @@ const props = defineProps({
   }
 
   20% {
-    transform: translate(-3px, 3px);
+    transform: translate(-1.5px, 1.5px);
   }
 
   40% {
-    transform: translate(-3px, -3px);
+    transform: translate(-1.5px, -1.5px);
   }
 
   60% {
-    transform: translate(3px, 3px);
+    transform: translate(1.5px, 1.5px);
   }
 
   80% {
-    transform: translate(3px, -3px);
+    transform: translate(1.5px, -1.5px);
   }
 
   to {

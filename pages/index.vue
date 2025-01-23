@@ -3,7 +3,7 @@
     <!-- Hero Section -->
 
     <HeroSection
-      title="Learn, Build, and Grow with CodeLinguist"
+      title="Learn, Build, and Grow with the CodeLinguist"
       :setHeight="true"
     >
       <template #button>

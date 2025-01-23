@@ -15,53 +15,17 @@
 
     <!-- Desktop Menu -->
     <div class="desktop-menu hidden sm:block w-full h-full bg-opacity-50 z-50">
-      <div class="text-dark font-bold">
+      <div class="text-dark font-ibm">
         <ul
           class="space-x-8 flex flex-row justify-end uppercase tracking-wider"
         >
-          <li>
+          <li v-for="item in menuItems" :key="item.link">
             <nuxt-link
-              to="/"
-              class="lg:px-2 text-base md:text-xl"
-              :class="{ active_page: isActive('/') }"
+              :to="item.link"
+              class="lg:px-2 text-base sm:text-h6 2xl:text-lg"
+              :class="{ active_page: isActive(item.link) }"
             >
-              Home
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link
-              to="/blog"
-              class="lg:px-2 text-base sm:text-lg"
-              :class="{ active_page: isActive('/blog') }"
-            >
-              Blog
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link
-              to="/projects"
-              class="lg:px-2 text-base sm:text-lg"
-              :class="{ active_page: isActive('/projects') }"
-            >
-              Projects
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link
-              to="/learning"
-              class="lg:px-2 text-base sm:text-lg"
-              :class="{ active_page: isActive('/learning') }"
-            >
-              Learning
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link
-              to="/about"
-              class="lg:px-2 text-base sm:text-lg"
-              :class="{ active_page: isActive('/about') }"
-            >
-              About
+              {{ item.label }}
             </nuxt-link>
           </li>
         </ul>
@@ -122,6 +86,15 @@ const toggleMenu = () => {
 };
 
 const isActive = (route) => useRoute().path === route;
+
+// menu items data
+const menuItems = [
+  { label: "Home", link: "/" },
+  { label: "Blog", link: "/blog" },
+  { label: "Projects", link: "/projects" },
+  { label: "Learning", link: "/learning" },
+  { label: "About", link: "/about" },
+];
 </script>
 
 <style scoped>
@@ -130,6 +103,7 @@ const isActive = (route) => useRoute().path === route;
   background-image: url(/_nuxt/assets/images/box.svg);
   background-size: cover;
   background-repeat: no-repeat;
-  border-bottom: 2px solid #201100;
+  background-position: center;
+  /* border-bottom: 2px solid #201100; */
 }
 </style>
