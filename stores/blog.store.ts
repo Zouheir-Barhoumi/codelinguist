@@ -7,35 +7,22 @@ export const useBlogStore = defineStore("blog", {
     error: null as string | null,
   }),
   actions: {
-    /**
-     * Fetches all blog posts from the API.
-     *
-     * @throws {Error} if the API request fails
-     */
     async fetchBlogPosts() {
       this.loading = true;
       this.error = null;
       try {
-        const { data } = await useAsyncData("blogPosts-" + "/blog", () => {
-          return queryCollection("blog").all();
-        });
-        this.blogPosts = data.value || [];
-        console.log("data: ", data);
+        // Use Nuxt Content's $content client directly
+        // const { $content } = useNuxtApp();
+        this.blogPosts = await queryCollection("blog").all();
+
+        // console.log("Fetched posts:", this.blogPosts);
       } catch (err) {
-        if (err instanceof Error) {
-          this.error = err.message;
-        } else {
-          this.error = String(err);
-        }
+        this.error =
+          err instanceof Error ? err.message : "Content fetch failed";
+        console.error("Content error:", err);
       } finally {
         this.loading = false;
       }
-    },
-  },
-  getters: {
-    getBlogPosts: (state) => state.blogPosts,
-    getBlogPostById: (state) => (id: number) => {
-      return state.blogPosts.find((post) => post.id === id);
     },
   },
 });
