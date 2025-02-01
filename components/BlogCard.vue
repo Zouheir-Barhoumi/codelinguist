@@ -2,7 +2,7 @@
 <template>
   <div
     class="mh-60 md:h-80 w-80 bg-lighter backdrop-blur-md flex flex-col justify-between p-2 font-caveat relative"
-    :style="getBorderStyle(post.id)"
+    :style="getBorderStyle(post.slug)"
   >
     <!-- Background Image -->
     <div
@@ -41,7 +41,7 @@
     <div
       class="relative z-10 flex justify-between items-center text-dark p-2 mt-4 bg-light text-base"
     >
-      <span>{{ post.topics.join(" | ") }}</span>
+      <span>{{ post.tags.join(" | ") }}</span>
       <span>{{ post.date }}</span>
     </div>
   </div>

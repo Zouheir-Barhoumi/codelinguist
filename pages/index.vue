@@ -147,6 +147,11 @@ const blogStore = useBlogStore();
 const projectStore = useProjectStore();
 const learningStore = useLearningStore();
 
+// For SSR/SSG compatibility
+useAsyncData("blog-posts", async () => {
+  await blogStore.fetchBlogPosts();
+});
+
 // Pagination for blog posts
 const {
   currentPage: bcp,
